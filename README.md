@@ -9,4 +9,4 @@
  
 ## 页面截图
 
-![](https://github.com/Eve-1995/evaluation-system/blob/es-branch/src/assets/img/project_picture/1.png)
+![desktop](https://github.com/Eve-1995/evaluation-system/blob/es-branch/src/assets/img/project_picture/1.png)
