@@ -9,7 +9,7 @@
 
 [DEMO](https://cipchk.github.io/ng-alain/)
  
-## Quick start
+## Quick startQuick start
 
 There are two ways to install:
 
