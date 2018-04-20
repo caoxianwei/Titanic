@@ -8,7 +8,7 @@
 更多信息见[中文 README](README-zh_CN.md)
 
 [DEMO](https://cipchk.github.io/ng-alain/)
-
+ 
 ## Quick start
 
 There are two ways to install:
