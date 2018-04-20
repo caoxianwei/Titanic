@@ -16,7 +16,7 @@
 ![5](https://github.com/Eve-1995/evaluation-system/blob/es-branch/src/assets/img/project_picture/5.png)
 ![6](https://github.com/Eve-1995/evaluation-system/blob/es-branch/src/assets/img/project_picture/6.png)
 
-##版本说明
+## 版本说明
 
 zorro的版本采用的是0.6版本,因0.7版本API改动较大,尝试升级失败了(┬＿┬).
 
