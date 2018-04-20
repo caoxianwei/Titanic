@@ -1,0 +1,59 @@
+<div class="modal-header">
+    <div class="modal-title">
+        <span>{{ 'thinking-test' | translate }}</span>
+        <button (click)="close()" aria-label="Close" class="ant-modal-close ng-star-inserted">
+            <span class="ant-modal-close-x"></span>
+        </button>
+    </div>
+</div>
+<div *ngIf="showTest">
+    <div *ngFor="let obj of questions;let index=index;">
+        <div *ngIf="index==currentIndex">
+            <div>
+                <h2>({{currentIndex+1}}/{{total}}){{obj.title}}</h2>
+            </div>
+            <br>
+            <nz-radio-group [(ngModel)]="questions[index].userAnswer" style="word-break:normal;display:inline;white-space:normal">
+                <label *ngIf="!!obj.info.A" style="word-break:normal;display:inline;white-space:normal" nz-radio [nzValue]="'A'" [nzDisabled]="controlDisabled" (click)="countResult()">
+                    <span style="word-break:normal;display:inline;white-space:normal">{{obj.info.A}}</span>
+                </label>
+                <br>
+                <label *ngIf="!!obj.info.B" style="word-break:normal;display:inline;white-space:normal" nz-radio [nzValue]="'B'" [nzDisabled]="controlDisabled" (click)="countResult()">
+                    <span style="word-break:normal;display:inline;white-space:normal">{{obj.info.B}}</span>
+                </label>
+                <br>
+                <label *ngIf="!!obj.info.C" style="word-break:normal;display:inline;white-space:normal" nz-radio [nzValue]="'C'" [nzDisabled]="controlDisabled" (click)="countResult()">
+                    <span style="word-break:normal;display:inline;white-space:normal">{{obj.info.C}}</span>
+                </label>
+                <br>
+                <label *ngIf="!!obj.info.D" style="word-break:normal;display:inline;white-space:normal" nz-radio [nzValue]="'D'" [nzDisabled]="controlDisabled" (click)="countResult()">
+                    <span style="word-break:normal;display:inline;white-space:normal">{{obj.info.D}}</span>
+                </label>
+                <br>
+                <label *ngIf="!!obj.info.E" style="word-break:normal;display:inline;white-space:normal" nz-radio [nzValue]="'E'" [nzDisabled]="controlDisabled" (click)="countResult()">
+                    <span style="word-break:normal;display:inline;white-space:normal">{{obj.info.E}}</span>
+                </label>
+                <br>
+            </nz-radio-group>
+        </div>
+    </div>
+</div>
+<result *ngIf="showSuccess" type="success" [title]="resultSuccess.title" [description]="resultSuccess.description"></result>
+<result *ngIf="showPrepare" [type]="resultPrepare.type" [title]="resultPrepare.title">
+    <button nz-button [nzType]="'primary'" style="width:100%;" [nzSize]="'large'" [disabled]="resultPrepare.status" (click)="startTest()">
+        {{ 'start' | translate }}
+    </button>
+</result>
+
+<div class="modal-footer" *ngIf="showTest">
+    <div nz-row>
+        <div nz-col [nzSpan]="20">
+            <nz-progress [ngModel]="progress"></nz-progress>
+        </div>
+        <div nz-col [nzSpan]="4">
+            <button nz-button [nzType]="'primary'" [nzSize]="'large'" (click)="pre()" [disabled]="currentIndex == 0||currentIndex == total">
+                {{ 'last-question' | translate }}
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,68 @@
+<div class="modal-header">
+    <div class="modal-title">
+        <span>{{ 'do-homework' | translate }}</span>
+    </div>
+</div>
+<nz-spin [nzSize]="'large'" [nzSpinning]="loading">
+    <div nz-row [nzGutter]="16" [ngStyle]="{'height':loading==true?'400px' : 'auto' }" [ngStyle]="{'width':loading==true?'250px' : 'auto' }">
+        <div nz-col [nzMd]="24">
+            <form nz-form [formGroup]="form" (ngSubmit)="save()" *ngIf="!loading">
+                <div nz-form-item nz-row>
+                    <div nz-form-label>
+                        <label for="name"> {{ 'name' | translate }}</label>
+                    </div>
+                    <div nz-form-control>
+                        <nz-input [nzId]="'name'" formControlName="name" name="name" [nzReadonly]="true">
+                        </nz-input>
+                    </div>
+                </div>
+                <div nz-form-item nz-row>
+                    <div nz-form-label>
+                        <label for="answer"> {{ 'answer' | translate }}</label>
+                    </div>
+                    <div nz-form-control>
+                        <div nz-form-control>
+                            <nz-input formControlName="answer" [nzId]="'answer'" nzType="textarea" nzAutosize [nzReadonly]="true"></nz-input>
+                        </div>
+                    </div>
+                </div>
+                <div nz-form-item nz-row>
+                    <div nz-form-label>
+                        <label for="score" nz-form-item-required> {{ 'score' | translate }}</label>
+                    </div>
+                    <div nz-form-control>
+                        <div nz-form-control>
+                            <nz-input [nzId]="'score'" formControlName="score" name="score" [nzReadonly]="homeworkObj.status==2?'true':'false'">
+                            </nz-input>
+                        </div>
+                    </div>
+                </div>
+                <div nz-form-item nz-row>
+                    <div nz-form-label>
+                        <label for="comment" nz-form-item-required> {{ 'comment' | translate }}</label>
+                    </div>
+                    <div nz-form-control>
+                        <div nz-form-control>
+                            <nz-input formControlName="comment" [nzId]="'comment'" nzType="textarea" nzAutosize [nzReadonly]="homeworkObj.status==2?'true':'false'"></nz-input>
+                        </div>
+                    </div>
+                </div>
+                <div nz-form-item nz-row>
+                    <div nz-form-label>
+                        <label> {{ 'correctStatus' | translate }}</label>
+                        <span *ngIf="homeworkObj.status==1">尚未批改</span>
+                        <span *ngIf="homeworkObj.status==2">已批改</span>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button nz-button [nzType]="'default'" [nzSize]="'large'" type="button" (click)="cancel()">
+                        {{ 'cancel' | translate }}
+                    </button>
+                    <button nz-button [nzType]="'primary'" [nzSize]="'large'" type="submit" [disabled]="form.invalid || !form.dirty">
+                        {{ 'ok' | translate }}
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</nz-spin>

@@ -1,0 +1,35 @@
+<pro-header [autoBreadcrumb]='false'>
+    <ng-template #content>
+        <div class="page-header">
+            <div class="avatar">
+                <nz-avatar nzSize="large" nzSrc="https://gw.alipayobjects.com/zos/rmsportal/lctvVCLfRpYCkYxAsiVQ.png"></nz-avatar>
+            </div>
+            <div class="desc">
+                <div class="desc-title">{{ 'hello' | translate }}，{{userName}}！</div>
+                <p>{{intro}}</p>
+            </div>
+        </div>
+    </ng-template>
+</pro-header>
+<div nz-row [nzGutter]="50">
+    <div nz-col [nzSpan]="12">
+        <nz-card>
+            <ng-template #title>
+                学生成绩比例图
+            </ng-template>
+            <ng-template #body>
+                <div echarts [options]="echartOption1" class="echartsStyle"></div>
+            </ng-template>
+        </nz-card>
+    </div>
+    <div nz-col [nzSpan]="12">
+        <nz-card>
+            <ng-template #title>
+                上课出勤率
+            </ng-template>
+            <ng-template #body>
+                <div echarts [options]="echartOption2" class="echartsStyle"></div>
+            </ng-template>
+        </nz-card>
+    </div>
+</div>

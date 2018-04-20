@@ -1,0 +1,70 @@
+<div class="content__title">
+    <h1>
+        {{ 'animal-test' | translate }}
+        <small>{{ 'animal-test-small' | translate }}</small>
+    </h1>
+</div>
+<div nz-row style="margin-bottom:5px;">
+    <button nz-button [nzType]="'primary'" [nzSize]="'large'" style="float:right;" (click)='createOrEdit("create")'>
+        <i class="anticon anticon-plus"></i>
+        <span>{{ 'add-question' | translate }}</span>
+    </button>
+</div>
+<div nz-row>
+    <div nz-col [nzMd]="24">
+        <nz-card>
+            <nz-table #nzTable [nzAjaxData]="tableData" [nzShowSizeChanger]="true" [nzLoading]="tableLoading" [nzTotal]="tableTotal"
+                [(nzPageIndex)]="tablePageIndex" (nzPageIndexChange)="getTableData()" [(nzPageSize)]="tablePageSize" (nzPageSizeChange)="getTableData()"
+                [nzShowTotal]="true">
+                <thead nz-thead>
+                    <tr>
+                        <th nz-th>
+                            <span>{{ 'actions' | translate }}</span>
+                        </th>
+                        <th nz-th>
+                            <span>{{ 'question' | translate }}</span>
+                        </th>
+                        <th nz-th>
+                            <span>{{ 'index' | translate }}</span>
+                        </th>
+                        <th nz-th>
+                            <span>{{ 'score-5' | translate }}</span>
+                        </th>
+                        <th nz-th>
+                            <span>{{ 'score-4' | translate }}</span>
+                        </th>
+                        <th nz-th>
+                            <span>{{ 'score-3' | translate }}</span>
+                        </th>
+                        <th nz-th>
+                            <span>{{ 'score-2' | translate }}</span>
+                        </th>
+                        <th nz-th>
+                            <span>{{ 'score-1' | translate }}</span>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody nz-tbody>
+                    <tr nz-tbody-tr *ngFor="let obj of nzTable.data">
+                        <td nz-td>
+                            <a (click)="createOrEdit('edit',obj)">
+                                <i class="anticon anticon-edit"></i>
+                            </a>
+                            <span nz-table-divider></span>
+                            <a (click)="delete(obj.id)">
+                                <i class="anticon anticon-delete"></i>
+                            </a>
+                        </td>
+                        <td nz-td>{{obj.title}}</td>
+                        <td nz-td>{{obj.num}}</td>
+                        <td nz-td>{{obj.info.A}}</td>
+                        <td nz-td>{{obj.info.B}}</td>
+                        <td nz-td>{{obj.info.C}}</td>
+                        <td nz-td>{{obj.info.D}}</td>
+                        <td nz-td>{{obj.info.E}}</td>
+                    </tr>
+                </tbody>
+            </nz-table>
+        </nz-card>
+    </div>
+</div>

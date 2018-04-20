@@ -1,0 +1,123 @@
+<div class="modal-header">
+    <div class="modal-title">
+        <span>{{ 'create' | translate }}</span>
+    </div>
+</div>
+<nz-spin [nzTip]="'Loading...'" [nzSpinning]="loading">
+    <div nz-row [nzGutter]="16">
+        <div nz-col [nzMd]="24">
+            <form nz-form [formGroup]="form" (ngSubmit)="save()">
+                <div nz-form-item nz-row>
+                    <div nz-form-label>
+                        <label for="voteName" nz-form-item-required> {{ 'voteName' | translate }}</label>
+                    </div>
+                    <div nz-form-control>
+                        <nz-input [nzId]="'voteName'" formControlName="voteName" name="voteName" required>
+                        </nz-input>
+                    </div>
+                </div>
+                <div nz-form-item nz-row>
+                    <div nz-form-label>
+                        <label for="maxVote" nz-form-item-required> {{ 'maxVote' | translate }}</label>
+                    </div>
+                    <div nz-form-control>
+                        <div nz-form-control>
+                            <nz-input [nzId]="'maxVote'" formControlName="maxVote" name="maxVote" required>
+                            </nz-input>
+                        </div>
+                    </div>
+                </div>
+                <div nz-form-item nz-row>
+                    <div nz-form-label>
+                        <label for="startTime" nz-form-item-required> {{ 'startTime' | translate }}</label>
+                    </div>
+                    <div nz-form-control>
+                        <div nz-form-control>
+                            <nz-datepicker style="width:100%;" formControlName="startTime" nzShowTime [nzFormat]="'YYYY-MM-DD HH:mm:ss'" [nzPlaceHolder]="''"></nz-datepicker>
+                        </div>
+                    </div>
+                </div>
+                <div nz-form-item nz-row>
+                    <div nz-form-label>
+                        <label for="endTime" nz-form-item-required> {{ 'endTime' | translate }}</label>
+                    </div>
+                    <div nz-form-control>
+                        <div nz-form-control>
+                            <nz-datepicker style="width:100%;" formControlName="endTime" nzShowTime [nzFormat]="'YYYY-MM-DD HH:mm:ss'" [nzPlaceHolder]="''"></nz-datepicker>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button nz-button [nzType]="'default'" [nzSize]="'large'" type="button" (click)="cancel()">
+                        {{ 'cancel' | translate }}
+                    </button>
+                    <button nz-button [nzType]="'primary'" [nzSize]="'large'" type="submit" [disabled]="form.invalid">
+                        {{ 'ok' | translate }}
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</nz-spin>
+
+<!-- <div class="modal-header">
+    <div class="modal-title">
+        <span>{{ 'create' | translate }}</span>
+    </div>
+</div>
+<nz-spin [nzTip]="'Loading...'" [nzSpinning]="loading">
+    <div nz-row [nzGutter]="16">
+        <div nz-col [nzMd]="24">
+            <form nz-form (ngSubmit)="save()">
+                <div nz-form-item nz-row>
+                    <div nz-form-label>
+                        <label for="voteName" nz-form-item-required> {{ 'voteName' | translate }}</label>
+                    </div>
+                    <div nz-form-control>
+                        <nz-input [nzId]="'voteName'" [(ngModel)]="obj.voteName" name="voteName" required>
+                        </nz-input>
+                    </div>
+                </div>
+                <div nz-form-item nz-row>
+                    <div nz-form-label>
+                        <label for="maxVote" nz-form-item-required> {{ 'maxVote' | translate }}</label>
+                    </div>
+                    <div nz-form-control>
+                        <div nz-form-control>
+                            <nz-input [nzId]="'maxVote'" [(ngModel)]="obj.maxVote" name="maxVote" required (ngModelChange)="maxVoteChange()">
+                            </nz-input>
+                        </div>
+                    </div>
+                </div>
+                <div nz-form-item nz-row>
+                    <div nz-form-label>
+                        <label for="startTime" nz-form-item-required> {{ 'startTime' | translate }}</label>
+                    </div>
+                    <div nz-form-control>
+                        <div nz-form-control>
+                            <nz-datepicker style="width:100%;" [(ngModel)]="obj.startTime" nzShowTime [nzFormat]="'YYYY-MM-DD HH:mm:ss'" [nzPlaceHolder]="''" name="startTime"></nz-datepicker>
+                        </div>
+                    </div>
+                </div>
+                <div nz-form-item nz-row>
+                    <div nz-form-label>
+                        <label for="endTime" nz-form-item-required> {{ 'endTime' | translate }}</label>
+                    </div>
+                    <div nz-form-control>
+                        <div nz-form-control>
+                            <nz-datepicker style="width:100%;" [(ngModel)]="obj.endTime" nzShowTime [nzFormat]="'YYYY-MM-DD HH:mm:ss'" [nzPlaceHolder]="''" name="endTime"></nz-datepicker>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button nz-button [nzType]="'default'" [nzSize]="'large'" type="button" (click)="cancel()">
+                        {{ 'cancel' | translate }}
+                    </button>
+                    <button nz-button [nzType]="'primary'" [nzSize]="'large'" type="submit">
+                        {{ 'ok' | translate }}
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</nz-spin> -->

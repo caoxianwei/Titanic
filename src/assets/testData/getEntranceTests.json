@@ -1,0 +1,49 @@
+{
+      "total": 3,
+      "results": [
+            {
+                  "id": "1",
+                  "type_number":"1",
+                  "detail_number":"1",
+                  "type": "性格测试(动物)",
+                  "statu": "未完成",
+                  "statu_number": "0",
+                  "detail_type":"0"
+            },
+            {
+                  "id": "4",
+                  "type_number":"1",
+                  "detail_number":"2",
+                  "type": "性格测试(色彩)",
+                  "statu": "未完成",
+                  "statu_number": "0",
+                  "detail_type":"0"
+            },{
+                  "id": "5",
+                  "type_number":"1",
+                  "detail_number":"3",
+                  "type": "性格测试(九型)",
+                  "statu": "未完成",
+                  "statu_number": "0",
+                  "detail_type":"0"
+            },
+            {
+                  "id": "2",
+                  "type_number":"2",
+                  "detail_number":"999",
+                  "type": "专业能力测试",
+                  "statu": "已完成",
+                  "statu_number": "1",
+                  "detail_type":""
+            },
+            {
+                  "id": "3",
+                  "type_number":"3",
+                  "detail_number":"999",
+                  "type": "思维能力测试",
+                  "statu": "未完成",
+                  "statu_number": "0",
+                  "detail_type":"1"
+            }
+      ]
+}

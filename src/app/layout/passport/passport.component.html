@@ -1,0 +1,18 @@
+<div class="container" style="height:90%;"><!--防止登录账户信息错误时出现滚轴-->
+    <div class="top">
+        <div class="head">
+            <a [routerLink]="['/']">
+                <img class="logo" src="./assets/img/logo-color.png">
+            </a>
+        </div>
+        <p class="desc"></p>
+    </div>
+    <router-outlet></router-outlet>
+    <global-footer [links]="links">
+        <ng-template #copyright>
+            Copyright
+            <nz-icon nzType="copyright" class="mx-sm"></nz-icon>2017-2018
+            <a href="javascript:;" class="mx-sm">{{ 'company-name' | translate }}</a>{{ 'copyright' | translate }}
+        </ng-template>
+    </global-footer>
+</div>

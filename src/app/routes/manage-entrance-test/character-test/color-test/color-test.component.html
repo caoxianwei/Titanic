@@ -1,0 +1,59 @@
+<div class="content__title">
+    <h1>
+        {{ 'color-test' | translate }}
+        <small>{{ 'color-test-small' | translate }}</small>
+    </h1>
+</div>
+<div nz-row style="margin-bottom:5px;">
+    <button nz-button [nzType]="'primary'" [nzSize]="'large'" style="float:right;" (click)="createOrEdit()">
+        <i class="anticon anticon-plus"></i>
+        <span>{{ 'add-question' | translate }}</span>
+    </button>
+</div>
+<div nz-row>
+    <div nz-col [nzMd]="24">
+        <nz-card>
+            <nz-table #nzTable
+                [nzAjaxData]="tableData"
+                [nzShowSizeChanger]="true"
+                [nzLoading]="tableLoading"
+                [nzTotal]="tableTotal"
+                [(nzPageIndex)]="tablePageIndex"
+                (nzPageIndexChange)="getTableData()"
+                [(nzPageSize)]="tablePageSize"
+                (nzPageSizeChange)="getTableData()"
+                [nzShowTotal]="true">
+                <thead nz-thead>
+                <tr>
+                    <th nz-th style="width:10%;"><span>{{ 'actions' | translate }}</span></th>
+                    <th nz-th style="width:5%;"><span>{{ 'index' | translate }}</span></th>
+                    <th nz-th style="width:17%;"><span>{{ 'question' | translate }}</span></th>
+                    <th nz-th style="width:17%;"><span>{{ 'select-A' | translate }}</span></th>
+                    <th nz-th style="width:17%;"><span>{{ 'select-B' | translate }}</span></th>
+                    <th nz-th style="width:17%;"><span>{{ 'select-C' | translate }}</span></th>
+                    <th nz-th style="width:17%;"><span>{{ 'select-D' | translate }}</span></th>
+                </tr>
+                </thead>
+                <tbody nz-tbody>
+                <tr nz-tbody-tr *ngFor="let obj of nzTable.data">
+                    <td nz-td>
+                        <a (click)="createOrEdit(obj)">
+                            <i class="anticon anticon-edit"></i>
+                        </a>
+                        <span nz-table-divider></span>
+                        <a (click)="delete(obj.id)">
+                            <i class="anticon anticon-delete"></i>
+                        </a>
+                    </td>
+                    <td nz-td>{{obj.index}}</td>
+                    <td nz-td>{{obj.question}}</td>
+                    <td nz-td>{{obj.A}}</td>
+                    <td nz-td>{{obj.B}}</td>
+                    <td nz-td>{{obj.C}}</td>
+                    <td nz-td>{{obj.D}}</td>
+                </tr>
+                </tbody>
+            </nz-table>
+        </nz-card>
+    </div>
+</div>

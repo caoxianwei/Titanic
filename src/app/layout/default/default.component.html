@@ -1,0 +1,16 @@
+<div class="wrapper">
+    <div class="router-progress-bar" *ngIf="isFetching"></div>
+    <app-header class="header"></app-header>
+    <app-sidebar class="aside"></app-sidebar>
+    <section class="content">
+        <router-outlet></router-outlet>
+        <!-- 版权声明 -->
+        <global-footer>
+            <ng-template #copyright>
+                Copyright
+                <nz-icon nzType="copyright" class="mx-sm"></nz-icon>2017-2018
+                <a href="javascript:;" class="mx-sm">{{ 'company-name' | translate }}</a>{{ 'copyright' | translate }}
+            </ng-template>
+        </global-footer>
+    </section>
+</div>

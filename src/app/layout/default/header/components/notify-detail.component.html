@@ -1,0 +1,21 @@
+<div class="modal-header">
+    <div class="modal-title">
+        <span>{{ 'check' | translate }}</span>
+    </div>
+</div>
+<nz-spin [nzSize]="'large'" [nzSpinning]="loading">
+    <div style="width:100%;text-align:center;">
+        {{title}}
+    </div>
+    <div style="text-indent:2em;">
+        {{describe}}
+    </div>
+    <div style="margin-left:345px;">
+        {{date}}
+    </div>
+    <div class="modal-footer">
+        <button nz-button [nzType]="'default'" [nzSize]="'large'" type="button" (click)="cancel()">
+            {{ 'close' | translate }}
+        </button>
+    </div>
+</nz-spin>

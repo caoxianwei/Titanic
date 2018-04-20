@@ -1,0 +1,37 @@
+<div class="modal-header">
+    <div class="modal-title">
+        <span>{{ 'create' | translate }}</span>
+    </div>
+</div>
+<nz-spin [nzSize]="'large'" [nzSpinning]="loading">
+    <div nz-row [nzGutter]="16">
+        <div nz-col [nzMd]="24">
+            <form nz-form #form="ngForm" (ngSubmit)="save()">
+                <div nz-form-item nz-row>
+                    <div nz-form-label>
+                        <label for="content"  nz-form-item-required> {{ 'content' | translate }}</label>
+                    </div>
+                    <div nz-form-control>
+                        <nz-input [(ngModel)]="content" name="content" required></nz-input>
+                    </div>
+                </div>
+                <div nz-form-item nz-row>
+                    <div nz-form-label>
+                        <label for="contact"> {{ 'contact' | translate }}</label>
+                    </div>
+                    <div nz-form-control>
+                        <nz-input [(ngModel)]="contact" name="contact"></nz-input>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button nz-button [nzType]="'default'" [nzSize]="'large'" type="button" (click)="cancel()">
+                        {{ 'cancel' | translate }}
+                    </button>
+                    <button nz-button [nzType]="'primary'" [nzSize]="'large'" type="submit" [disabled]="!form.form.valid">
+                        {{ 'ok' | translate }}
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</nz-spin>

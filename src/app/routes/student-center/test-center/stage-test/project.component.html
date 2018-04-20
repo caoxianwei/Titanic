@@ -1,0 +1,52 @@
+<div class="modal-header">
+    <div class="modal-title">
+        <span>{{ 'check' | translate }}</span>
+    </div>
+</div>
+<nz-spin [nzSize]="'large'" [nzSpinning]="loading">
+    <div nz-row [nzGutter]="16" [ngStyle]="{'height':loading==true?'400px' : 'auto' }" [ngStyle]="{'width':loading==true?'250px' : 'auto' }">
+        <div nz-col [nzMd]="24">
+            <form nz-form #form="ngForm">
+                <div nz-form-item nz-row>
+                    <div nz-form-label>
+                        <label for="projectName"> {{ 'project-name' | translate }}</label>
+                    </div>
+                    <div nz-form-control>
+                        <nz-input [(ngModel)]="projectName" name="projectName" [nzReadonly]="true"></nz-input>
+                    </div>
+                </div>
+                <div nz-form-item nz-row>
+                    <div nz-form-label>
+                        <label for="projectDescription"> {{ 'description' | translate }}</label>
+                    </div>
+                    <div nz-form-control>
+                        <div nz-form-control>
+                            <nz-input [(ngModel)]="projectDescription" [nzId]="'projectDescription'" nzType="textarea" nzAutosize name="projectDescription"
+                                [nzReadonly]="true">
+                            </nz-input>
+                        </div>
+                    </div>
+                </div>
+                <nz-upload [(nzFileList)]="fileList" [nzBeforeUpload]="beforeUpload" [nzMultiple]="true">
+                    <button nz-button>
+                        <i class="anticon anticon-upload"></i>
+                        <span>选择文件</span>
+                    </button>
+                </nz-upload>
+                <div class="modal-footer">
+                    <button nz-button [nzType]="'default'" [nzSize]="'large'" type="button" (click)="cancel()">
+                        {{ 'cancel' | translate }}
+                    </button>
+                    <button nz-button [nzType]="'primary'" [nzSize]="'large'" (click)="handleUpload()" [disabled]="fileList.length == 0">
+                        {{ 'ok' | translate }}
+                    </button>
+                </div>
+                <!-- <button nz-button [nzType]="'primary'" [nzLoading]="uploading" (click)="handleUpload()" [disabled]="fileList.length == 0"
+                    style="margin-top: 16px">
+                    {{ uploading ? 'Uploading' : 'Start Upload' }}
+                    上交
+                </button> -->
+            </form>
+        </div>
+    </div>
+</nz-spin>

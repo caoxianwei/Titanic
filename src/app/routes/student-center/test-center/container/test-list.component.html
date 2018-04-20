@@ -1,0 +1,42 @@
+<div class="content__title">
+    <h1>
+        {{ 'test-center' | translate }}
+        <small>{{ 'test-center-small' | translate }}</small>
+    </h1>
+</div>
+<div nz-row>
+    <div nz-col [nzMd]="24">
+        <nz-card>
+            <nz-table #nzTable [nzAjaxData]="tableData" [nzIsPagination]="false" [nzLoading]="tableLoading">
+                <thead nz-thead>
+                    <tr>
+                        <th nz-th>
+                            <span>{{ 'actions' | translate }}</span>
+                        </th>
+                        <th nz-th>
+                            <span>{{ 'test-type' | translate }}</span>
+                        </th>
+                        <th nz-th>
+                            <span>{{ 'describe' | translate }}</span>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody nz-tbody>
+                    <tr nz-tbody-tr *ngFor="let obj of nzTable.data">
+                        <td nz-td>
+                            <a (click)="doTest(obj.id)">
+                                <i class="anticon anticon-edit"></i>
+                            </a>
+                            <span nz-table-divider *ngIf="obj.stage_id"></span>
+                            <a (click)="showProject(obj.id)" *ngIf="obj.stage_id">
+                                <i class="anticon anticon-file-text"></i>
+                            </a>
+                        </td>
+                        <td nz-td>{{obj.name}}</td>
+                        <td nz-td>{{obj.describe}}</td>
+                    </tr>
+                </tbody>
+            </nz-table>
+        </nz-card>
+    </div>
+</div>

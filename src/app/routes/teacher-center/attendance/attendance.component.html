@@ -1,0 +1,99 @@
+<div class="content__title">
+    <h1>
+        {{ 'class-attendance-record' | translate }}
+        <small>{{ 'class-attendance-record-small' | translate }}</small>
+    </h1>
+</div>
+<div nz-row nzGutter="16">
+    <div nz-col nzXs="6" nzSm="6" nzMd="6" class="mb-md">
+        <nz-select style="width: 100%;" [(ngModel)]="param_class" [nzPlaceHolder]="'请选择班级'" (ngModelChange)="paramChange()">
+            <nz-option *ngFor="let obj of classes" [nzLabel]="obj.name" [nzValue]="obj.id">
+            </nz-option>
+        </nz-select>
+    </div>
+    <div nz-col nzXs="6" nzSm="6" nzMd="6" class="mb-md">
+        <nz-select style="width: 100%;" [(ngModel)]="param_course" [nzPlaceHolder]="'请选择课程'" (ngModelChange)="paramChange()">
+            <nz-option *ngFor="let obj of course" [nzLabel]="obj.name" [nzValue]="obj.id">
+            </nz-option>
+        </nz-select>
+    </div>
+    <div nz-col nzXs="6" nzSm="6" nzMd="6" class="mb-md">
+        <nz-select style="width: 100%;" [(ngModel)]="param_content" [nzPlaceHolder]="'请选择上课记录'">
+            <nz-option *ngFor="let obj of historyClassInfo" [nzLabel]="obj.content" [nzValue]="obj.id">
+            </nz-option>
+        </nz-select>
+    </div>
+    <div nz-col nzXs="6" nzSm="6" nzMd="6" class="mb-md">
+        <button nz-button [nzType]="'primary'" style="width:100%;" (click)="search()" [disabled]="param_class==undefined||param_content==undefined">
+            <i class="anticon anticon-search"></i>
+            <span>{{ 'search' | translate }}</span>
+        </button>
+    </div>
+</div>
+<nz-spin [nzSpinning]="loading" [nzSize]="'large'">
+    <div nz-row nzGutter="16">
+        <div nz-col nzXs="24" nzSm="12" nzMd="6" class="mb-md">
+            <div nz-row nzType="flex" nzAlign="middle" class="bg-success rounded-md">
+                <div nz-col nzSpan="12" class="p-md text-white">
+                    <div class="h2 mt0">出勤</div>
+                </div>
+                <div nz-col nzSpan="12" class="p-md text-white">
+                    <p class="text-nowrap" style="font-size:24px;">{{attendanceInfo.attendance.length}}{{ 'people' | translate }}</p>
+                </div>
+            </div>
+        </div>
+        <div nz-col nzXs="24" nzSm="12" nzMd="6" class="mb-md">
+            <div nz-row nzType="flex" nzAlign="middle" class="bg-primary rounded-md">
+                <div nz-col nzSpan="12" class="p-md text-white">
+                    <div class="h2 mt0">早退</div>
+                </div>
+                <div nz-col nzSpan="12" class="p-md text-white">
+                    <p class="text-nowrap" style="font-size:24px;">{{attendanceInfo.leaveearly.length}}{{ 'people' | translate }}</p>
+                </div>
+            </div>
+        </div>
+        <div nz-col nzXs="24" nzSm="12" nzMd="6" class="mb-md">
+            <div nz-row nzType="flex" nzAlign="middle" class="bg-orange rounded-md">
+                <div nz-col nzSpan="12" class="p-md text-white">
+                    <div class="h2 mt0">迟到</div>
+                </div>
+                <div nz-col nzSpan="12" class="p-md text-white">
+                    <p class="text-nowrap" style="font-size:24px;">{{attendanceInfo.late.length}}{{ 'people' | translate }}</p>
+                </div>
+            </div>
+        </div>
+        <div nz-col nzXs="24" nzSm="12" nzMd="6" class="mb-md">
+            <div nz-row nzType="flex" nzAlign="middle" class="bg-pink rounded-md">
+                <div nz-col nzSpan="12" class="p-md text-white">
+                    <div class="h2 mt0">缺勤</div>
+                </div>
+                <div nz-col nzSpan="12" class="p-md text-white">
+                    <p class="text-nowrap" style="font-size:24px;">{{attendanceInfo.absence.length}}{{ 'people' | translate }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div nz-row [nzGutter]="8" *ngIf="showBoolean">
+        <div nz-col [nzSpan]="6">
+            <div *ngFor="let obj of attendanceInfo.attendance;" style="float:left;margin-left:10%;">
+                {{obj.name}}
+            </div>
+        </div>
+        <div nz-col [nzSpan]="6">
+            <div *ngFor="let obj of attendanceInfo.leaveearly;" style="float:left;margin-left:10%;">
+                {{obj.name}}
+            </div>
+        </div>
+        <div nz-col [nzSpan]="6">
+            <div *ngFor="let obj of attendanceInfo.late;" style="float:left;margin-left:10%;">
+                {{obj.name}}
+            </div>
+        </div>
+        <div nz-col [nzSpan]="6">
+            <div *ngFor="let obj of attendanceInfo.absence;" style="float:left;margin-left:10%;">
+                {{obj.name}}
+            </div>
+        </div>
+    </div>
+</nz-spin>

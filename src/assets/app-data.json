@@ -1,0 +1,272 @@
+{
+    "app": {
+        "name": "晔兮科技",
+        "enName": "Yes Technology",
+        "description": "Ng-zorro admin panel front-end framework"
+    },
+    "user": {
+        "name": "Eve",
+        "avatar": "./assets/img/zombie.jpg",
+        "email": "948832626@qq.com"
+    },
+    "menu": [
+        {
+            "children": [
+                {
+                    "text": "首页",
+                    "link": "/welcome",
+                    "i18n": "welcome",
+                    "icon": "icon-graph"
+                },
+                {
+                    "text": "常用功能",
+                    "link": "/common-function/common-function",
+                    "i18n": "common-function",
+                    "icon": "icon-folder"
+                },
+                {
+                    "text": "课表查询",
+                    "link": "/common-function/schedule-select",
+                    "i18n": "schedule-select",
+                    "reuse": false,
+                    "hide": true,
+                    "icon": "icon-speedometer"
+                },{
+                    "text": "测评中心",
+                    "link": "/student-center/test-center",
+                    "i18n": "test-center",
+                    "reuse": false,
+                    "acl": 3,
+                    "icon": "icon-note"
+                },
+                {
+                    "text": "作业中心",
+                    "link": "/student-center/homework-list",
+                    "i18n": "homework-list",
+                    "reuse": false,
+                    "acl": 7,
+                    "icon": "icon-magnifier"
+                },
+                {
+                    "text": "专业测试",
+                    "link": "/student-center/professtion-test",
+                    "i18n": "professtion-test",
+                    "reuse": true,
+                    "hide": true
+                },
+                {
+                    "text": "阶段测试",
+                    "link": "/student-center/stage-test",
+                    "i18n": "stage-test",
+                    "reuse": true,
+                    "hide": true
+                },
+                {
+                    "text": "班级投票",
+                    "link": "/student-center/vote",
+                    "i18n": "class-vote",
+                    "reuse": false,
+                    "acl": 9,
+                    "icon": "icon-like"
+                },
+                {
+                    "text": "消息记录",
+                    "link": "/student-center/notice-list",
+                    "i18n": "notice-list",
+                    "reuse": false,
+                    "acl": 21,
+                    "icon": "icon-phone"
+                },
+                {
+                    "text": "课堂出勤",
+                    "link": "/teacher-center/class-attendance-record",
+                    "i18n": "class-attendance-record",
+                    "reuse": false,
+                    "acl": 10,
+                    "icon": "icon-map"
+                },
+                {
+                    "text": "作业管理",
+                    "link": "/teacher-center/homework-management",
+                    "i18n": "homework-management",
+                    "reuse": false,
+                    "acl": 11,
+                    "icon": "icon-equalizer"
+                },
+                {
+                    "text": "作业查看",
+                    "link": "/teacher-center/homework-correct",
+                    "i18n": "homework-correct",
+                    "reuse": false,
+                    "acl": 12,
+                    "icon": "icon-magnifier"
+                },
+                {
+                    "text": "任教信息",
+                    "link": "/teacher-center/my-lesson",
+                    "i18n": "teaching-information",
+                    "reuse": false,
+                    "acl": 13,
+                    "icon": "icon-film"
+                },{
+                    "text": "投票管理",
+                    "link": "/class-bussiness/vote-management",
+                    "i18n": "vote-management",
+                    "reuse": false,
+                    "acl": 15,
+                    "icon": "icon-equalizer"
+                },
+                {
+                    "text": "阶段测评",
+                    "link": "/class-bussiness/stage-management",
+                    "i18n": "stage-management",
+                    "reuse": false,
+                    "acl": 16,
+                    "icon": "icon-note"
+                },
+                {
+                    "text": "学生管理",
+                    "link": "/class-bussiness/student-management",
+                    "i18n": "student-management",
+                    "reuse": false,
+                    "acl": 18,
+                    "icon": "icon-equalizer"
+                },
+                {
+                    "text": "入学批阅",
+                    "link": "/class-bussiness/enter-correct",
+                    "i18n": "enter-correct",
+                    "reuse": false,
+                    "acl": 19,
+                    "icon": "icon-note"
+                },
+                {
+                    "text": "消息管理",
+                    "link": "/class-bussiness/notice-management",
+                    "i18n": "notice-management",
+                    "reuse": false,
+                    "acl": 20,
+                    "icon": "icon-equalizer"
+                },
+                {
+                    "text": "用户列表",
+                    "link": "/management/user-list",
+                    "i18n": "user-list",
+                    "reuse": false,
+                    "acl": 23,
+                    "icon": "icon-list"
+                },
+                {
+                    "text": "权限管理",
+                    "link": "/management/permit-management",
+                    "i18n": "permit-management",
+                    "reuse": false,
+                    "acl": 24,
+                    "icon": "icon-pin"
+                },
+                {
+                    "text": "角色管理",
+                    "link": "/management/role-list",
+                    "i18n": "role-management",
+                    "reuse": false,
+                    "acl": 25,
+                    "icon": "icon-user"
+                },
+                {
+                    "text": "查看日志",
+                    "link": "/management/log-index",
+                    "i18n": "log-index",
+                    "reuse": false,
+                    "acl": 26,
+                    "icon": "icon-hourglass"
+                },
+                {
+                    "text": "参数管理",
+                    "link": "/management/stage-rule",
+                    "i18n": "stage-rule",
+                    "reuse": false,
+                    "acl": 27,
+                    "icon": "icon-equalizer"
+                },
+                {
+                    "text": "反馈列表",
+                    "link": "/management/feedback-index",
+                    "i18n": "feedback-index",
+                    "reuse": false,
+                    "acl": 28,
+                    "icon": "icon-speech"
+                },{
+                    "text": "报告中心",
+                    "link": "/student-center/report",
+                    "i18n": "report-center",
+                    "reuse": false,
+                    "acl": 29,
+                    "icon": "icon-speech"
+                },
+                {
+                    "text": "首页",
+                    "link": "/common-function/index",
+                    "i18n": "welcome",
+                    "reuse": false,
+                    "hide": true
+                },{
+                    "text": "题库管理",
+                    "link": "/a/b",
+                    "i18n": "question-management",
+                    "reuse": false,
+                    "acl": 30,
+                    "icon": "icon-question"
+                },{
+                    "text": "标签管理",
+                    "link": "/a/b",
+                    "i18n": "label-management",
+                    "reuse": false,
+                    "acl": 31,
+                    "icon": "icon-bulb"
+                },{
+                    "text": "报告管理",
+                    "link": "/a/b",
+                    "i18n": "report-management",
+                    "reuse": false,
+                    "acl": 32,
+                    "icon": "icon-book-open"
+                },{
+                    "text": "专业管理",
+                    "link": "/a/b",
+                    "i18n": "profession-management",
+                    "reuse": false,
+                    "acl": 33,
+                    "icon": "icon-bag"
+                },{
+                    "text": "班级管理",
+                    "link": "/a/b",
+                    "i18n": "class-management",
+                    "reuse": false,
+                    "acl": 34,
+                    "icon": "icon-people"
+                },{
+                    "text": "奖惩管理",
+                    "link": "/a/b",
+                    "i18n": "event-management",
+                    "reuse": false,
+                    "acl": 35,
+                    "icon": "icon-badge"
+                },{
+                    "text": "阶段审阅",
+                    "link": "/a/b",
+                    "i18n": "stage-check",
+                    "reuse": false,
+                    "acl": 36,
+                    "icon": "icon-bell"
+                },{
+                    "text": "毕业生管理",
+                    "link": "/a/b",
+                    "i18n": "guatuation-management",
+                    "reuse": false,
+                    "acl": 37,
+                    "icon": "icon-puzzle"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,58 @@
+<div class="modal-header">
+    <div class="modal-title">
+        <span>{{ 'check' | translate }}</span>
+    </div>
+</div>
+<nz-spin [nzTip]="'Loading...'" [nzSpinning]="loading">
+    <div nz-row [nzGutter]="16">
+        <div nz-col [nzMd]="24">
+            <form nz-form>
+                <div nz-form-item nz-row>
+                    <div nz-form-label>
+                        <label for="user_id"> {{ 'userId' | translate }}</label>
+                    </div>
+                    <div nz-form-control>
+                        <nz-input [nzId]="'user_id'" [(ngModel)]="user_id" name="user_id" [nzReadonly]="true">
+                        </nz-input>
+                    </div>
+                </div>
+                <div nz-form-item nz-row>
+                    <div nz-form-label>
+                        <label for="name"> {{ 'name' | translate }}</label>
+                    </div>
+                    <div nz-form-control>
+                        <nz-input [nzId]="'name'" [(ngModel)]="name" name="name" [nzReadonly]="true">
+                        </nz-input>
+                    </div>
+                </div>
+                <div nz-form-item nz-row>
+                    <div nz-form-label>
+                        <label for="content"> {{ 'content' | translate }}</label>
+                    </div>
+                    <div nz-form-control>
+                        <nz-input [(ngModel)]="content" [nzId]="'content'" nzType="textarea" nzAutosize name="content" [nzReadonly]="true">
+                        </nz-input>
+                    </div>
+                </div>
+                <div nz-form-item nz-row>
+                    <div nz-form-label>
+                        <label for="contact"> {{ 'contact' | translate }}</label>
+                    </div>
+                    <div nz-form-control>
+                        <nz-input [nzId]="'contact'" [(ngModel)]="contact" name="contact" [nzReadonly]="true">
+                        </nz-input>
+                    </div>
+                </div>
+                <div nz-form-item nz-row>
+                    <div nz-form-label>
+                        <label for="created_at"> {{ 'create-time' | translate }}</label>
+                    </div>
+                    <div nz-form-control>
+                        <nz-input [nzId]="'created_at'" [(ngModel)]="created_at" name="created_at" [nzReadonly]="true">
+                        </nz-input>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</nz-spin>

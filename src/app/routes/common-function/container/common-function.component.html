@@ -1,0 +1,34 @@
+<div nz-row [nzGutter]="16" class="py-lg">
+    <div nz-col [nzXs]="12" [nzMd]="8">
+        <nz-card>
+            <a (click)="execute('schedule-select')" class="d-block text-center text-primary">
+                <i class="fa fa-5x fa-television mb-lg"></i>
+                <h2>{{ 'schedule-select' | translate }}</h2>
+            </a>
+        </nz-card>
+    </div>
+    <div nz-col [nzXs]="12" [nzMd]="8" *ngIf="hasRole(5)||hasRole(6)">
+        <nz-card>
+            <a (click)="execute('stage-debate')" class="d-block text-center text-orange">
+                <i class="anticon anticon-user fa-5x mb-lg"></i>
+                <h2>{{ 'stage-debate' | translate }}</h2>
+            </a>
+        </nz-card>
+    </div>
+    <div nz-col [nzXs]="12" [nzMd]="8">
+        <nz-card>
+            <a (click)="execute('add-feedback')" class="d-block text-center text-teal">
+                <i class="fa fa-5x fa-comment mb-lg"></i>
+                <h2>{{ 'feedback' | translate }}</h2>
+            </a>
+        </nz-card>
+    </div>
+    <div nz-col [nzXs]="12" [nzMd]="8" *ngIf="!hasRole(3)">
+        <nz-card>
+            <a (click)="execute('comprehensive-evaluation')" class="d-block text-center text-teal">
+                <i class="fa fa-5x fa-tags mb-lg"></i>
+                <h2>{{ 'stage-evaluation' | translate }}</h2>
+            </a>
+        </nz-card>
+    </div>
+</div>

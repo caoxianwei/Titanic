@@ -1,0 +1,26 @@
+<div nz-row [nzGutter]="16" class="py-lg">
+    <div nz-col [nzXs]="12" [nzMd]="8">
+        <nz-card>
+            <a (click)="execute('entrace-report')" class="d-block text-center text-teal">
+                <i class="fa fa-5x fa-battery-full mb-lg"></i>
+                <h2>{{ 'entrace-report' | translate }}</h2>
+            </a>
+        </nz-card>
+    </div>
+    <div nz-col [nzXs]="12" [nzMd]="8">
+        <nz-card>
+            <a (click)="execute('stage-report')" class="d-block text-center text-orange">
+                <i class="fa fa-5x fa-battery-half mb-lg"></i>
+                <h2>{{ 'stage-report' | translate }}</h2>
+            </a>
+        </nz-card>
+    </div>
+    <div nz-col [nzXs]="12" [nzMd]="8">
+        <nz-card>
+            <a (click)="execute('graduation-report')" class="d-block text-center text-red">
+                <i class="fa fa-5x fa-battery-quarter mb-lg"></i>
+                <h2>{{ 'graduation-report' | translate }}</h2>
+            </a>
+        </nz-card>
+    </div>
+</div>

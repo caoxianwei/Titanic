@@ -1,0 +1,275 @@
+{
+      "total": 30,
+      "results": [
+            {
+                  "id": "1",
+                  "question": "你勤劳吗？",
+                  "answer_tiger": "很同意",
+                  "answer_peacock": "比较同意",
+                  "answer_koala": "一般同意",
+                  "answer_owl": "不太同意",
+                  "answer_chameleon": "完全不同意"
+            },
+            {
+                  "id": "2",
+                  "question": "你做事是一个值得信赖的人吗？",
+                  "answer_tiger": "很同意",
+                  "answer_peacock": "比较同意",
+                  "answer_koala": "一般同意",
+                  "answer_owl": "不太同意",
+                  "answer_chameleon": "完全不同意"
+            },
+            {
+                  "id": "3",
+                  "question": "你令人愉快吗？",
+                  "answer_tiger": "很同意",
+                  "answer_peacock": "比较同意",
+                  "answer_koala": "一般同意",
+                  "answer_owl": "不太同意",
+                  "answer_chameleon": "完全不同意"
+            },
+            {
+                  "id": "4",
+                  "question": "你反应快吗？",
+                  "answer_tiger": "很同意",
+                  "answer_peacock": "比较同意",
+                  "answer_koala": "一般同意",
+                  "answer_owl": "不太同意",
+                  "answer_chameleon": "完全不同意"
+            },
+            {
+                  "id": "5",
+                  "question": "你勇于学习吗？",
+                  "answer_tiger": "很同意",
+                  "answer_peacock": "比较同意",
+                  "answer_koala": "一般同意",
+                  "answer_owl": "不太同意",
+                  "answer_chameleon": "完全不同意"
+            },
+            {
+                  "id": "6",
+                  "question": "你是否积极主动？",
+                  "answer_tiger": "很同意",
+                  "answer_peacock": "比较同意",
+                  "answer_koala": "一般同意",
+                  "answer_owl": "不太同意",
+                  "answer_chameleon": "完全不同意"
+            },
+            {
+                  "id": "7",
+                  "question": "你个性温和吗？",
+                  "answer_tiger": "很同意",
+                  "answer_peacock": "比较同意",
+                  "answer_koala": "一般同意",
+                  "answer_owl": "不太同意",
+                  "answer_chameleon": "完全不同意"
+            },
+            {
+                  "id": "8",
+                  "question": "你外向吗？",
+                  "answer_tiger": "很同意",
+                  "answer_peacock": "比较同意",
+                  "answer_koala": "一般同意",
+                  "answer_owl": "不太同意",
+                  "answer_chameleon": "完全不同意"
+            },
+            {
+                  "id": "9",
+                  "question": "你工作足够有效率吗？",
+                  "answer_tiger": "很同意",
+                  "answer_peacock": "比较同意",
+                  "answer_koala": "一般同意",
+                  "answer_owl": "不太同意",
+                  "answer_chameleon": "完全不同意"
+            },
+            {
+                  "id": "10",
+                  "question": "你传统吗？",
+                  "answer_tiger": "很同意",
+                  "answer_peacock": "比较同意",
+                  "answer_koala": "一般同意",
+                  "answer_owl": "不太同意",
+                  "answer_chameleon": "完全不同意"
+            },
+            {
+                  "id": "11",
+                  "question": "你你受人爱戴吗？",
+                  "answer_tiger": "很同意",
+                  "answer_peacock": "比较同意",
+                  "answer_koala": "一般同意",
+                  "answer_owl": "不太同意",
+                  "answer_chameleon": "完全不同意"
+            },
+            {
+                  "id": "12",
+                  "question": "你强势吗？",
+                  "answer_tiger": "很同意",
+                  "answer_peacock": "比较同意",
+                  "answer_koala": "一般同意",
+                  "answer_owl": "不太同意",
+                  "answer_chameleon": "完全不同意"
+            },
+            {
+                  "id": "13",
+                  "question": "你的协调能力好吗？",
+                  "answer_tiger": "很同意",
+                  "answer_peacock": "比较同意",
+                  "answer_koala": "一般同意",
+                  "answer_owl": "不太同意",
+                  "answer_chameleon": "完全不同意"
+            },
+            {
+                  "id": "14",
+                  "question": "你精确吗？",
+                  "answer_tiger": "很同意",
+                  "answer_peacock": "比较同意",
+                  "answer_koala": "一般同意",
+                  "answer_owl": "不太同意",
+                  "answer_chameleon": "完全不同意"
+            },
+            {
+                  "id": "15",
+                  "question": "你适应能力强吗？",
+                  "answer_tiger": "很同意",
+                  "answer_peacock": "比较同意",
+                  "answer_koala": "一般同意",
+                  "answer_owl": "不太同意",
+                  "answer_chameleon": "完全不同意"
+            },
+            {
+                  "id": "16",
+                  "question": "你有说服力吗？",
+                  "answer_tiger": "很同意",
+                  "answer_peacock": "比较同意",
+                  "answer_koala": "一般同意",
+                  "answer_owl": "不太同意",
+                  "answer_chameleon": "完全不同意"
+            },
+            {
+                  "id": "17",
+                  "question": "你镇定吗？",
+                  "answer_tiger": "很同意",
+                  "answer_peacock": "比较同意",
+                  "answer_koala": "一般同意",
+                  "answer_owl": "不太同意",
+                  "answer_chameleon": "完全不同意"
+            },
+            {
+                  "id": "18",
+                  "question": "你亲切吗？",
+                  "answer_tiger": "很同意",
+                  "answer_peacock": "比较同意",
+                  "answer_koala": "一般同意",
+                  "answer_owl": "不太同意",
+                  "answer_chameleon": "完全不同意"
+            },
+            {
+                  "id": "19",
+                  "question": "你富有同情心吗？",
+                  "answer_tiger": "很同意",
+                  "answer_peacock": "比较同意",
+                  "answer_koala": "一般同意",
+                  "answer_owl": "不太同意",
+                  "answer_chameleon": "完全不同意"
+            },
+            {
+                  "id": "20",
+                  "question": "你害羞吗？",
+                  "answer_tiger": "很同意",
+                  "answer_peacock": "比较同意",
+                  "answer_koala": "一般同意",
+                  "answer_owl": "不太同意",
+                  "answer_chameleon": "完全不同意"
+            },
+            {
+                  "id": "21",
+                  "question": "你组织能力好吗？",
+                  "answer_tiger": "很同意",
+                  "answer_peacock": "比较同意",
+                  "answer_koala": "一般同意",
+                  "answer_owl": "不太同意",
+                  "answer_chameleon": "完全不同意"
+            },
+            {
+                  "id": "22",
+                  "question": "你有活力吗？",
+                  "answer_tiger": "很同意",
+                  "answer_peacock": "比较同意",
+                  "answer_koala": "一般同意",
+                  "answer_owl": "不太同意",
+                  "answer_chameleon": "完全不同意"
+            },
+            {
+                  "id": "23",
+                  "question": "你独立吗？",
+                  "answer_tiger": "很同意",
+                  "answer_peacock": "比较同意",
+                  "answer_koala": "一般同意",
+                  "answer_owl": "不太同意",
+                  "answer_chameleon": "完全不同意"
+            },
+            {
+                  "id": "24",
+                  "question": "你注意细节吗？",
+                  "answer_tiger": "很同意",
+                  "answer_peacock": "比较同意",
+                  "answer_koala": "一般同意",
+                  "answer_owl": "不太同意",
+                  "answer_chameleon": "完全不同意"
+            },
+            {
+                  "id": "25",
+                  "question": "你慷慨吗？",
+                  "answer_tiger": "很同意",
+                  "answer_peacock": "比较同意",
+                  "answer_koala": "一般同意",
+                  "answer_owl": "不太同意",
+                  "answer_chameleon": "完全不同意"
+            },
+            {
+                  "id": "26",
+                  "question": "你善解人意吗？",
+                  "answer_tiger": "很同意",
+                  "answer_peacock": "比较同意",
+                  "answer_koala": "一般同意",
+                  "answer_owl": "不太同意",
+                  "answer_chameleon": "完全不同意"
+            },
+            {
+                  "id": "27",
+                  "question": "做事认真且正直吗？",
+                  "answer_tiger": "很同意",
+                  "answer_peacock": "比较同意",
+                  "answer_koala": "一般同意",
+                  "answer_owl": "不太同意",
+                  "answer_chameleon": "完全不同意"
+            },
+            {
+                  "id": "28",
+                  "question": "你小心翼翼吗？",
+                  "answer_tiger": "很同意",
+                  "answer_peacock": "比较同意",
+                  "answer_koala": "一般同意",
+                  "answer_owl": "不太同意",
+                  "answer_chameleon": "完全不同意"
+            },
+            {
+                  "id": "29",
+                  "question": "你爱说话吗？",
+                  "answer_tiger": "很同意",
+                  "answer_peacock": "比较同意",
+                  "answer_koala": "一般同意",
+                  "answer_owl": "不太同意",
+                  "answer_chameleon": "完全不同意"
+            },
+            {
+                  "id": "30",
+                  "question": "你大胆吗？",
+                  "answer_tiger": "很同意",
+                  "answer_peacock": "比较同意",
+                  "answer_koala": "一般同意",
+                  "answer_owl": "不太同意",
+                  "answer_chameleon": "完全不同意"
+            }
+      ]
+}

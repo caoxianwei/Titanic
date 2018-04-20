@@ -1,0 +1,59 @@
+<div class="content__title">
+    <h1>
+        {{ 'teaching-information' | translate }}
+        <small>{{ 'teaching-information-small' | translate }}</small>
+    </h1>
+</div>
+<div nz-row nzGutter="16">
+    <div nz-col nzXs="4" nzSm="4" nzMd="4" class="mb-md" [nzOffset]="14">
+        <nz-select style="width: 100%;" [(ngModel)]="stageValue" [nzPlaceHolder]="'请选择学期'">
+            <nz-option *ngFor="let obj of stageInfo" [nzLabel]="obj.name" [nzValue]="obj.id">
+            </nz-option>
+        </nz-select>
+    </div>
+    <div nz-col nzXs="3" nzSm="3" nzMd="3" class="mb-md">
+        <nz-select style="width: 100%;" [(ngModel)]="weekValue" [nzPlaceHolder]="'请选择周数'">
+            <nz-option *ngFor="let obj of weekInfo" [nzLabel]="obj" [nzValue]="obj">
+            </nz-option>
+        </nz-select>
+    </div>
+    <div nz-col nzXs="3" nzSm="3" nzMd="3" class="mb-md">
+        <button nz-button [nzType]="'primary'" style="width:100%;" (click)="getTable()" [disabled]="stageValue==undefined||weekValue==undefined">
+            <i class="anticon anticon-search"></i>
+            <span>{{ 'search' | translate }}</span>
+        </button>
+    </div>
+</div>
+
+<div nz-row>
+    <div nz-col [nzMd]="24">
+        <nz-card>
+            <nz-table #nzTable [nzDataSource]="tableData" [nzIsPagination]="false" [nzLoading]="tableLoading">
+                <thead nz-thead>
+                    <tr>
+                        <th nz-th>
+                            <span>{{ 'week' | translate }}</span>
+                        </th>
+                        <th nz-th>
+                            <span>{{ 'section' | translate }}</span>
+                        </th>
+                        <th nz-th>
+                            <span>{{ 'place' | translate }}</span>
+                        </th>
+                        <th nz-th>
+                            <span>{{ 'className' | translate }}</span>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody nz-tbody>
+                    <tr nz-tbody-tr *ngFor="let obj of nzTable.data">
+                        <td nz-td>{{obj.week}}</td>
+                        <td nz-td>{{obj.time}}</td>
+                        <td nz-td>{{obj.place}}</td>
+                        <td nz-td>{{obj.name}}</td>
+                    </tr>
+                </tbody>
+            </nz-table>
+        </nz-card>
+    </div>
+</div>

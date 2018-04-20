@@ -1,0 +1,73 @@
+<div class="content__title">
+    <h1>
+        {{ 'vote-management' | translate }}
+        <small>{{ 'vote-management-small' | translate }}</small>
+    </h1>
+</div>
+<div nz-row nzGutter="16">
+    <div nz-col nzXs="21" nzSm="21" nzMd="21" class="mb-md" style="float:left;">
+        <nz-radio-group [(ngModel)]="statusRadio" (ngModelChange)="filterChange()">
+            <label nz-radio [nzValue]="'underWay'">
+                <span>{{ 'underWay' | translate }}</span>
+            </label>
+            <label nz-radio [nzValue]="'future'">
+                <span>{{ 'future' | translate }}</span>
+            </label>
+            <label nz-radio [nzValue]="'finished'">
+                <span>{{ 'finished' | translate }}</span>
+            </label>
+        </nz-radio-group>
+    </div>
+    <div nz-col nzXs="3" nzSm="3" nzMd="3" class="mb-md">
+        <button nz-button [nzType]="'primary'" style="width:100%;" (click)="create()">
+            <i class="anticon anticon-plus"></i>
+            <span>{{ 'create' | translate }}</span>
+        </button>
+    </div>
+</div>
+<div nz-row>
+    <div nz-col [nzMd]="24">
+        <nz-card>
+            <nz-table #nzTable [nzAjaxData]="tableData" [nzIsPagination]="false" [nzLoading]="tableLoading">
+                <thead nz-thead>
+                    <tr>
+                        <th nz-th>
+                            <span>{{ 'actions' | translate }}</span>
+                        </th>
+                        <th nz-th>
+                            <span>{{ 'originator' | translate }}</span>
+                        </th>
+                        <th nz-th>
+                            <span>{{ 'selectName' | translate }}</span>
+                        </th>
+                        <th nz-th>
+                            <span>{{ 'startTime' | translate }}</span>
+                        </th>
+                        <th nz-th>
+                            <span>{{ 'endTime' | translate }}</span>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody nz-tbody>
+                    <tr nz-tbody-tr *ngFor="let obj of nzTable.data">
+                        <td nz-td>
+                            <a (click)="check(obj.id)">
+                                <i class="anticon anticon-search"></i>
+                            </a>
+                            <span nz-table-divider *ngIf="canDelete(obj.level)"></span>
+                            <nz-popconfirm [nzTitle]="confirmText" (nzOnConfirm)="delete(obj.id)" *ngIf="canDelete(obj.level)">
+                                <a nz-popconfirm>
+                                    <i class="anticon anticon-delete"></i>
+                                </a>
+                            </nz-popconfirm>
+                        </td>
+                        <td nz-td>{{obj.user_name}}</td>
+                        <td nz-td>{{obj.sele_name}}</td>
+                        <td nz-td>{{obj.starttime}}</td>
+                        <td nz-td>{{obj.endtime}}</td>
+                    </tr>
+                </tbody>
+            </nz-table>
+        </nz-card>
+    </div>
+</div>

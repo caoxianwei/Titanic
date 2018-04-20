@@ -1,0 +1,53 @@
+<div class="modal-header">
+    <div class="modal-title">
+        <span>{{ 'character-test' | translate }}</span>
+        <button (click)="close()" aria-label="Close" class="ant-modal-close ng-star-inserted">
+            <span class="ant-modal-close-x"></span>
+        </button>
+    </div>
+</div>
+<h2 *ngIf="zhBoolean&&showTest">请在以下选项中,选出符合你的描述</h2>
+<h2 *ngIf="enBoolean&&showTest">Please select the following description in the following options</h2>
+<desc-list size="large" layout="vertical" [col]="3" *ngIf="showTest">
+    <desc-list-item>
+        <div *ngFor="let obj of questions;let index=index">
+            <label nz-checkbox [(ngModel)]="questions[index].userAnswer" [ngStyle]="{'display':obj.num >= column1Start&& obj.num <= column1End? 'inline' : 'none' }">
+                <span>{{obj.num}}{{obj.title}}</span>
+            </label>
+        </div>
+    </desc-list-item>
+    <desc-list-item>
+        <div *ngFor="let obj of questions;let index=index">
+            <label nz-checkbox [(ngModel)]="questions[index].userAnswer" [ngStyle]="{'display':obj.num >= column2Start&& obj.num <= column2End? 'inline' : 'none' }">
+                <span>{{obj.num}}{{obj.title}}</span>
+            </label>
+        </div>
+    </desc-list-item>
+    <desc-list-item>
+        <div *ngFor="let obj of questions;let index=index">
+            <label nz-checkbox [(ngModel)]="questions[index].userAnswer" [ngStyle]="{'display':obj.num >= column3Start&& obj.num <= column3End? 'inline' : 'none' }">
+                <span>{{obj.num}}{{obj.title}}</span>
+            </label>
+        </div>
+    </desc-list-item>
+</desc-list>
+<br/>
+<div nz-row *ngIf="showTest">
+    <div nz-col [nzSpan]="7" [nzOffset]="17">
+        <nz-pagination (click)="paginationChange()" [(nzPageIndex)]="nzPageIndex" [nzTotal]="total" [nzPageSize]="30"></nz-pagination>
+    </div>
+</div>
+
+<result *ngIf="showSuccess" type="success" [title]="resultSuccess.title" [description]="resultSuccess.description"></result>
+<result *ngIf="showPrepare" [type]="resultPrepare.type" [title]="resultPrepare.title">
+    <button nz-button [nzType]="'primary'" style="width:100%;" [nzSize]="'large'" [disabled]="resultPrepare.status" (click)="startTest()">
+        {{ 'start' | translate }}
+    </button>
+</result>
+<div class="modal-footer" *ngIf="showTest">
+    <count-down *ngIf="controlCountDown&&zhBoolean" [config]="zhConfig" (end)="updateControlSubmit()"></count-down>&nbsp;&nbsp;&nbsp;
+    <count-down *ngIf="controlCountDown&&enBoolean" [config]="enConfig" (end)="updateControlSubmit()"></count-down>&nbsp;&nbsp;&nbsp;
+    <button nz-button [nzType]="'primary'" [nzSize]="'large'" type="button" (click)="save()" [disabled]="controlSubmit">
+        {{ 'ok' | translate }}
+    </button>
+</div>

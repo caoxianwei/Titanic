@@ -1,0 +1,68 @@
+<div class="modal-header">
+    <div class="modal-title">
+        <span>{{ 'create' | translate }}</span>
+    </div>
+</div>
+<nz-spin [nzSpinning]="loading">
+    <div nz-row [nzGutter]="16">
+        <div nz-col [nzMd]="24">
+            <form nz-form #form="ngForm" (ngSubmit)="save()">
+                <div nz-form-item nz-row>
+                    <div nz-form-label>
+                        <label for="student" nz-form-item-required> {{ 'student' | translate }}</label>
+                    </div>
+                    <div nz-form-control>
+                        <div nz-form-control>
+                            <nz-select [(ngModel)]="student" name="student" [nzPlaceHolder]="''" required>
+                                <nz-option *ngFor="let obj of studentsInfo" [nzLabel]="obj.content" [nzValue]="obj.id">
+                                </nz-option>
+                            </nz-select>
+                        </div>
+                    </div>
+                </div>
+                <div nz-form-item nz-row [nzGutter]="16">
+                    <div nz-col [nzMd]="12">
+                        <div nz-form-label>
+                            <label for="level1" nz-form-item-required> {{ 'level1' | translate }}</label>
+                        </div>
+                        <div nz-form-control>
+                            <nz-select (ngModelChange)="paramChange()" [(ngModel)]="level1" name="level1" [nzPlaceHolder]="''" required>
+                                <nz-option *ngFor="let obj of level1Options" [nzLabel]="obj.name" [nzValue]="obj.id">
+                                </nz-option>
+                            </nz-select>
+                        </div>
+                    </div>
+                    <div nz-col [nzMd]="12">
+                        <div nz-form-label>
+                            <label for="level2" nz-form-item-required> {{ 'level2' | translate }}</label>
+                        </div>
+                        <div nz-form-control>
+                            <nz-select [(ngModel)]="level2" [nzPlaceHolder]="''" required name="level2">
+                                <nz-option *ngFor="let obj of level2Options" [nzLabel]="obj.name" [nzValue]="obj.id">
+                                </nz-option>
+                            </nz-select>
+                        </div>
+                    </div>
+                </div>
+                <div nz-form-item nz-row>
+                    <div nz-form-label>
+                        <label for="detail" nz-form-item-required> {{ 'detail' | translate }}</label>
+                    </div>
+                    <div nz-form-control>
+                        <div nz-form-control>
+                            <nz-input [(ngModel)]="detail" name="detail" [nzId]="'detail'" nzType="textarea" nzAutosize required></nz-input>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button nz-button [nzType]="'default'" [nzSize]="'large'" type="button" (click)="cancel()">
+                        {{ 'cancel' | translate }}
+                    </button>
+                    <button nz-button [nzType]="'primary'" [nzSize]="'large'" type="submit" [disabled]="!form.form.valid">
+                        {{ 'ok' | translate }}
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</nz-spin>

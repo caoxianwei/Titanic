@@ -1,0 +1,75 @@
+<div class="modal-header">
+    <div class="modal-title">
+        <span>{{ 'stage-debate' | translate }}</span>
+    </div>
+</div>
+<nz-spin [nzSize]="'large'" [nzSpinning]="loading">
+    <div nz-row [nzGutter]="16">
+        <div nz-col [nzMd]="24">
+            <form nz-form #form="ngForm" (ngSubmit)="save()">
+                <div nz-form-item nz-row>
+                    <div nz-form-label>
+                        <label for="class"> {{ 'class' | translate }}</label>
+                    </div>
+                    <div nz-form-control>
+                        <nz-select [(ngModel)]="class_id" [nzPlaceHolder]="''" required name="class_id" (ngModelChange)="classChange()">
+                            <nz-option *ngFor="let obj of classInfo" [nzLabel]="obj.name" [nzValue]="obj.id">
+                            </nz-option>
+                        </nz-select>
+                    </div>
+                </div>
+                <div nz-form-item nz-row>
+                    <div nz-form-label>
+                        <label for="class"> {{ 'stage' | translate }}</label>
+                    </div>
+                    <div nz-form-control>
+                        <nz-select [(ngModel)]="stage_id" [nzPlaceHolder]="''" required name="stage_id">
+                            <nz-option *ngFor="let obj of stageInfo" [nzLabel]="obj.project_name" [nzValue]="obj.id">
+                            </nz-option>
+                        </nz-select>
+                    </div>
+                </div>
+                <div nz-form-item nz-row>
+                    <div nz-form-label>
+                        <label for="studentId"> {{ 'studentId' | translate }}</label>
+                    </div>
+                    <div nz-form-control>
+                        <nz-input [(ngModel)]="studentId" name="studentId" required></nz-input>
+                    </div>
+                </div>
+                <div nz-form-item nz-row>
+                    <div nz-form-label>
+                        <label for="projectscore"> {{ 'projectscore' | translate }}</label>
+                    </div>
+                    <div nz-form-control>
+                        <nz-input [(ngModel)]="projectscore" name="projectscore" required></nz-input>
+                    </div>
+                </div>
+                <div nz-form-item nz-row>
+                    <div nz-form-label>
+                        <label for="filescore"> {{ 'filescore' | translate }}</label>
+                    </div>
+                    <div nz-form-control>
+                        <nz-input [(ngModel)]="filescore" name="filescore" required></nz-input>
+                    </div>
+                </div>
+                <div nz-form-item nz-row>
+                    <div nz-form-label>
+                        <label for="debatescore"> {{ 'debatescore' | translate }}</label>
+                    </div>
+                    <div nz-form-control>
+                        <nz-input [(ngModel)]="debatescore" name="debatescore" required></nz-input>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button nz-button [nzType]="'default'" [nzSize]="'large'" type="button" (click)="cancel()">
+                        {{ 'cancel' | translate }}
+                    </button>
+                    <button nz-button [nzType]="'primary'" [nzSize]="'large'" type="submit" [disabled]="!form.form.valid">
+                        {{ 'ok' | translate }}
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</nz-spin>

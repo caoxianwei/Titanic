@@ -1,0 +1,86 @@
+<div class="content__title">
+    <h1>
+        {{ 'professtion-test' | translate }}
+        <small>{{ 'professtion-test-small' | translate }}</small>
+    </h1>
+</div>
+<div nz-row [nzGutter]="24">
+    <div nz-col nzXs="24" nzSm="24" nzMd="21">
+        <nz-collapseset *ngIf="showTest" [nzBordered]="false" nzAccordion>
+            <nz-collapse *ngFor="let panel of panels" [nzTitle]="panel.name" [nzActive]="panel.active">
+                <!-- 单选题 -->
+                <div *ngIf="panel.type==0">
+                    <div *ngFor="let question of choice;let index=index;">
+                        <h3>{{index+1}}、{{choice[index].title}}</h3>
+                        <nz-radio-group [(ngModel)]="choice[index].userAnswer">
+                            <label nz-radio [nzValue]="'A'">
+                                <span>{{question.info.A}}</span>
+                            </label>
+                            <label nz-radio [nzValue]="'B'">
+                                <span>{{question.info.B}}</span>
+                            </label>
+                            <label nz-radio [nzValue]="'C'">
+                                <span>{{question.info.C}}</span>
+                            </label>
+                            <label nz-radio [nzValue]="'D'">
+                                <span>{{question.info.D}}</span>
+                            </label>
+                        </nz-radio-group>
+                    </div>
+                </div>
+                <!-- 判断题 -->
+                <div *ngIf="panel.type==2">
+                    <div *ngFor="let question of judgment;let index=index;">
+                        <h3>
+                            <nz-switch [(ngModel)]="judgment[index].userAnswer">
+                                <i class=" anticon anticon-check" checked></i>
+                                <i class=" anticon anticon-cross" unchecked></i>
+                            </nz-switch>
+                            {{index+1}}、{{question.title}}
+                        </h3>
+                    </div>
+                </div>
+                <!-- 填空题 -->
+                <div *ngIf="panel.type==3">
+                    <div *ngFor="let question of completion;let index=index;">
+                        <h3>{{index+1}}、{{completion[index].title}}</h3>
+                        <nz-input nzType="textarea" [nzAutosize]="true" [(ngModel)]="completion[index].userAnswer"></nz-input>
+                    </div>
+                </div>
+                <!-- 简答题 -->
+                <div *ngIf="panel.type==4">
+                    <div *ngFor="let question of answer;let index=index;">
+                        <h3>{{index+1}}、{{answer[index].title}}</h3>
+                        <nz-input nzType="textarea" [nzAutosize]="true" [(ngModel)]="answer[index].userAnswer"></nz-input>
+                    </div>
+                </div>
+            </nz-collapse>
+        </nz-collapseset>
+    </div>
+    <div nz-col nzXs="24" nzSm="24" nzMd="3">
+        <nz-affix [nzOffsetTop]="120" *ngIf="showTest">
+            <p>剩余答题时间:</p>
+            <count-down [config]="config" (end)="submit()" (notify)="alertRestTime()"></count-down>
+        </nz-affix>
+    </div>
+</div>
+<result *ngIf="showSuccess" type="success" [title]="resultSuccess.title" [description]="resultSuccess.description">
+        <button nz-button [nzType]="'primary'" style="width:100%;" [nzSize]="'large'" [disabled]="resultPrepare.status" (click)="toIndex()">
+                {{ 'to-index' | translate }}
+            </button>
+</result>
+<result *ngIf="showPrepare" [type]="resultPrepare.type" [title]="resultPrepare.title">
+    <button nz-button [nzType]="'primary'" style="width:100%;" [nzSize]="'large'" [disabled]="resultPrepare.status" (click)="startTest()">
+        {{ 'start' | translate }}
+    </button>
+</result>
+
+<div class="modal-footer" *ngIf="showTest">
+    <div nz-row [nzGutter]="24">
+        <div nz-col nzXs="24" nzSm="24" nzMd="21">
+            <button nz-button [nzType]="'primary'" [nzSize]="'large'" (click)="submit()">
+                {{ 'submit' | translate }}
+            </button>
+        </div>
+    </div>
+</div>

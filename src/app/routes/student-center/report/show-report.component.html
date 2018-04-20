@@ -1,0 +1,22 @@
+<div class="modal-header">
+    <div class="modal-title">
+        <span>{{ 'check' | translate }}</span>
+    </div>
+</div>
+<nz-spin [nzSize]="'large'" [nzSpinning]="loading">
+    <div nz-row [nzGutter]="16">
+        <div nz-col [nzMd]="24">
+            <form nz-form>
+                <div nz-form-item nz-row>
+                    <div nz-form-label>
+                        <label for="content"> {{ 'report-detail' | translate }}</label>
+                    </div>
+                    <div nz-form-control>
+                        <nz-input [nzId]="'content'" nzType="textarea" nzAutosize [(ngModel)]="content" name="content" [nzReadonly]="true">
+                        </nz-input>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</nz-spin>

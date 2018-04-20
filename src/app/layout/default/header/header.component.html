@@ -1,0 +1,38 @@
+<div class="logo">
+    <a [routerLink]="['/']">
+        <img class="expanded" src="./assets/img/index.png" alt="{{settings.app.name}}" style="width:120px;height:33px;" />
+        <img class="collapsed" src="./assets/img/collapsed-index.png" alt="{{settings.app.name}}" style="max-height:30px;" />
+    </a>
+</div>
+<div class="top-nav-wrap">
+    <ul class="top-nav">
+        <!-- Menu -->
+        <li>
+            <div class="item" (click)="toggleCollapsedSideabar()">
+                <i class="anticon anticon-menu-{{settings.layout.collapsed ? 'unfold' : 'fold'}}"></i>
+            </div>
+        </li>
+    </ul>
+    <ul class="top-nav">
+        <!-- Notify -->
+        <li>
+            <header-notify></header-notify>
+        </li>
+        <!-- Settings -->
+        <li class="hidden-xs">
+            <nz-dropdown nzTrigger="click" nzPlacement="bottomRight">
+                <div class="item" nz-dropdown>
+                    <i class="anticon anticon-setting"></i>
+                </div>
+                <div nz-menu style="width:200px">
+                    <div nz-menu-item>
+                        <header-i18n></header-i18n>
+                    </div>
+                </div>
+            </nz-dropdown>
+        </li>
+        <li class="hidden-xs">
+            <header-user></header-user>
+        </li>
+    </ul>
+</div>

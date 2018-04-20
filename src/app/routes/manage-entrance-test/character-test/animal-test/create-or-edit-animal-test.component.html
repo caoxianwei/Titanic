@@ -1,0 +1,105 @@
+<div class="modal-header">
+    <div class="modal-title">
+        <span *ngIf="obj">{{ 'edit' | translate }}</span>
+        <span *ngIf="!obj">{{ 'create' | translate }}</span>
+    </div>
+</div>
+<nz-spin [nzTip]="'Loading...'" [nzSpinning]="loading">
+    <div nz-row [nzGutter]="16">
+        <div nz-col [nzMd]="24">
+            <form nz-form [formGroup]="form" (ngSubmit)="save()">
+                <div nz-form-item nz-row>
+                    <div nz-form-label>
+                        <label for="question" nz-form-item-required> {{ 'question' | translate }}</label>
+                    </div>
+                    <div nz-form-control>
+                        <nz-input [nzId]="'question'" formControlName="question" name="question" required>
+                        </nz-input>
+                    </div>
+                </div>
+                <div nz-form-item nz-row>
+                    <div nz-form-label>
+                        <label for="num" nz-form-item-required> {{ 'index' | translate }}</label>
+                        <nz-tooltip *ngIf="language=='zh-CN'" [nzTitle]="'
+                        5+10+14+18+24+30 = 老虎分数
+                        3+6+13+20+22+29 = 孔雀分数
+                        2+8+15+17+25+28 = 考拉分数
+                        1+7+11+16+21+26 = 猫头鹰分数
+                        4+9+12+19+23+27 = 变色龙分数
+                        '">
+                            <i nz-tooltip class="anticon anticon-question-circle-o"></i>
+                        </nz-tooltip>
+                        <nz-tooltip *ngIf="language=='en'" [nzTitle]="'
+                        5+10+14+18+24+30 = tiger
+                        3+6+13+20+22+29 = peacock
+                        2+8+15+17+25+28 = koala
+                        1+7+11+16+21+26 = owl
+                        4+9+12+19+23+27 = chameleon
+                        '">
+                            <i nz-tooltip class="anticon anticon-question-circle-o"></i>
+                        </nz-tooltip>
+                    </div>
+                    <div nz-form-control>
+                        <nz-select style="width: 100%;" formControlName="num" nzPlaceHolder="">
+                            <nz-option *ngFor="let option of options" [nzLabel]="option" [nzValue]="option">
+                            </nz-option>
+                        </nz-select>
+                    </div>
+                </div>
+                <div nz-form-item nz-row>
+                    <div nz-form-label>
+                        <label for="score-5" nz-form-item-required> {{ 'score-5' | translate }}</label>
+                    </div>
+                    <div nz-form-control>
+                        <nz-input [nzId]="'score-5'" formControlName="score_5" name="score-5" required>
+                        </nz-input>
+                    </div>
+                </div>
+                <div nz-form-item nz-row>
+                    <div nz-form-label>
+                        <label for="score-4" nz-form-item-required> {{ 'score-4' | translate }}</label>
+                    </div>
+                    <div nz-form-control>
+                        <nz-input [nzId]="'score-4'" formControlName="score_4" name="score-4" required>
+                        </nz-input>
+                    </div>
+                </div>
+                <div nz-form-item nz-row>
+                    <div nz-form-label>
+                        <label for="score-3" nz-form-item-required> {{ 'score-3' | translate }}</label>
+                    </div>
+                    <div nz-form-control>
+                        <nz-input [nzId]="'score-3'" formControlName="score_3" name="score-3" required>
+                        </nz-input>
+                    </div>
+                </div>
+                <div nz-form-item nz-row>
+                    <div nz-form-label>
+                        <label for="score-2" nz-form-item-required> {{ 'score-2' | translate }}</label>
+                    </div>
+                    <div nz-form-control>
+                        <nz-input [nzId]="'score-2'" formControlName="score_2" name="score-2" required>
+                        </nz-input>
+                    </div>
+                </div>
+                <div nz-form-item nz-row>
+                    <div nz-form-label>
+                        <label for="score-1" nz-form-item-required> {{ 'score-1' | translate }}</label>
+                    </div>
+                    <div nz-form-control>
+                        <nz-input [nzId]="'score-1'" formControlName="score_1" name="score-1" required>
+                        </nz-input>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button nz-button [nzType]="'default'" [nzSize]="'large'" type="button" (click)="cancel()">
+                        {{ 'cancel' | translate }}
+                    </button>
+                    <button nz-button [nzType]="'primary'" [nzSize]="'large'" type="submit" [disabled]="form.invalid || !form.dirty">
+                        {{ 'ok' | translate }}
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</nz-spin>
