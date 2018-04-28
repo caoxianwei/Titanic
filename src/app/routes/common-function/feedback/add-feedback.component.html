@@ -12,7 +12,8 @@
                         <label for="content"  nz-form-item-required> {{ 'content' | translate }}</label>
                     </div>
                     <div nz-form-control>
-                        <nz-input [(ngModel)]="content" name="content" required></nz-input>
+                        <nz-input [(ngModel)]="content" nzType="textarea" nzAutosize name="content" required>
+                        </nz-input>
                     </div>
                 </div>
                 <div nz-form-item nz-row>

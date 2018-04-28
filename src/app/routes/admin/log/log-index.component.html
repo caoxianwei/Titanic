@@ -5,8 +5,13 @@
     </h1>
 </div>
 <div nz-row nzGutter="16">
-    <div nz-col nzXs="6" nzSm="6" nzMd="6" class="mb-md">
+    <div nz-col nzXs="9" nzSm="9" nzMd="9" class="mb-md">
         <nz-radio-group [(ngModel)]="catelog" [nzSize]="'large'" (ngModelChange)="catelogChange()">
+            <label nz-radio [nzValue]="undefined">
+                <span>
+                    {{ 'all' | translate }}
+                </span>
+            </label>
             <label nz-radio [nzValue]="'create'">
                 <span>
                     {{ 'create' | translate }}
@@ -24,13 +29,13 @@
             </label>
         </nz-radio-group>
     </div>
-    <div nz-col nzXs="5" nzSm="5" nzMd="5" class="mb-md">
+    <div nz-col nzXs="4" nzSm="4" nzMd="4" class="mb-md">
         <nz-input [(ngModel)]="userId" name="userId" [nzPlaceHolder]="userIdTip"></nz-input>
     </div>
-    <div nz-col nzXs="5" nzSm="5" nzMd="5" class="mb-md">
+    <div nz-col nzXs="4" nzSm="4" nzMd="4" class="mb-md">
         <nz-input [(ngModel)]="ipAddress" name="ipAddress" [nzPlaceHolder]="ipAddressTip"></nz-input>
     </div>
-    <div nz-col nzXs="5" nzSm="5" nzMd="5" class="mb-md">
+    <div nz-col nzXs="4" nzSm="4" nzMd="4" class="mb-md">
         <nz-select style="width: 100%;" [(ngModel)]="roleId" [nzPlaceHolder]="roleIdTip">
             <!-- <nz-option *ngFor="let obj of roleOptions" [nzLabel]="obj.name" [nzValue]="obj.id">
             </nz-option> -->
@@ -76,13 +81,13 @@
                         <td nz-td>{{obj.info}}</td>
                         <td nz-td>{{obj.created_at}}</td>
                         <td nz-td>
-                            <span *ngIf="obj.catalog=='create'" style="background:#36c6d3;color:white;padding:2px 5px 2px 5px;">
+                            <span *ngIf="obj.catelog=='create'" style="background:#36c6d3;color:white;padding:2px 5px 2px 5px;">
                                 {{obj.opType}}
                             </span>
-                            <span *ngIf="obj.catalog=='update'" style="background:#F1C40F;color:white;padding:2px 5px 2px 5px;">
+                            <span *ngIf="obj.catelog=='update'" style="background:#F1C40F;color:white;padding:2px 5px 2px 5px;">
                                 {{obj.opType}}
                             </span>
-                            <span *ngIf="obj.catalog=='delete'" style="background:#ed6b75;color:white;padding:2px 5px 2px 5px;">
+                            <span *ngIf="obj.catelog=='delete'" style="background:#ed6b75;color:white;padding:2px 5px 2px 5px;">
                                 {{obj.opType}}
                             </span>
                         </td>

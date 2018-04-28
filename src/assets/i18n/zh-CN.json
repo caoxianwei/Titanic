@@ -306,7 +306,13 @@
     "stage-check":"阶段审阅",
     "guatuation-management":"毕业生管理",
     "test-rule":"测试规则",
+    "test-rule-small":"对各个阶段的测评规则进行调整",
     "study-mode":"学习模式",
     "weight-rate":"权重系数",
-    "report-rule":"报告规则"
+    "report-rule":"报告规则",
+    "all":"全部",
+    "attendance":"全勤",
+    "absence":"缺席",
+    "late":"迟到",
+    "leaveearly":"早退"
 }

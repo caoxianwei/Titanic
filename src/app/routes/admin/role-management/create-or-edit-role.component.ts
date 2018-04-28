@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { NzModalSubject } from 'ng-zorro-antd';
+import { NzModalSubject, NzMessageService } from 'ng-zorro-antd';
 import { AdminService } from '../admin.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Logger } from 'angular2-logger/core';
@@ -13,6 +13,7 @@ export class CreateOrEditRoleComponent implements OnInit {
     @Input() obj: any;
     constructor(
         private subject: NzModalSubject,
+        private msg: NzMessageService,
         private service: AdminService,
         private fb: FormBuilder,
         private log: Logger) { }
@@ -37,5 +38,6 @@ export class CreateOrEditRoleComponent implements OnInit {
         result['name'] = this.form.value.name;
         this.subject.next(result);
         this.subject.destroy();
+        this.msg.success('保存成功！');
     }
 }

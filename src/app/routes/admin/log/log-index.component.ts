@@ -25,21 +25,21 @@ export class LogIndexComponent implements OnInit {
     getTableData() {
         this.tableLoading = true;
         this.service.getLogs(this.userId, this.ipAddress, this.catelog, this.roleId, this.tablePageIndex, this.tablePageSize).subscribe((data: any) => {
-            for (const key in data) {
-                if (data.hasOwnProperty(key)) {
-                    const element = data[key];
-                    if (element.catalog === 'create') {
+            for (const key in data.log) {
+                if (data.log.hasOwnProperty(key)) {
+                    const element = data.log[key];
+                    if (element.catelog === 'create') {
                         element.opType = '新增';
-                    } else if (element.catalog === 'update') {
+                    } else if (element.catelog === 'update') {
                         element.opType = '编辑';
-                    } else if (element.catalog === 'delete') {
+                    } else if (element.catelog === 'delete') {
                         element.opType = '删除';
                     }
                 }
             }
-            this.tableData = data;
+            this.tableData = data.log;
             this.tableLoading = false;
-            this.tableTotal = 10;
+            this.tableTotal = data.count;
         });
     }
     catelogChange() {

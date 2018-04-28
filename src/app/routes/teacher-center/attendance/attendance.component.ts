@@ -15,7 +15,6 @@ export class AttendanceComponent implements OnInit {
     param_course;
     classes;
     course;
-    showBoolean = false;
     getData() {
         this.teacherService.getLessonInformation().subscribe((data: any) => {
             this.classes = data.class;
@@ -71,6 +70,24 @@ export class AttendanceComponent implements OnInit {
             }, 1);
         }
     }
+    type = 'attendance';
+    catelogChange() {
+        setTimeout(() => {
+            this.log.log('打印考勤类别数据');
+            this.log.debug(this.attendanceInfo);
+            this.tableLoading = true;
+            if (this.type === 'attendance') {
+                this.tableData = this.attendanceInfo.attendance;
+            } else if (this.type === 'absence') {
+                this.tableData = this.attendanceInfo.absence;
+            } else if (this.type === 'late') {
+                this.tableData = this.attendanceInfo.late;
+            } else if (this.type === 'leaveearly') {
+                this.tableData = this.attendanceInfo.leaveearly;
+            }
+            this.tableLoading = false;
+        }, 1);
+    }
     attendanceInfo = {
         'absence': [],
         'attendance': [],
@@ -79,23 +96,24 @@ export class AttendanceComponent implements OnInit {
     };
     historyClassInfo;
     param_content;
-    loading = false;
+    tableLoading = false;
+    tableData = [];
     search() {
-        this.loading = true;
+        this.tableLoading = true;
         this.teacherService.getHistoryAttendanceInfo(this.param_class, this.param_content).subscribe((data: any) => {
             this.log.log('打印讲师的学生考勤信息');
             this.log.debug(data);
             this.attendanceInfo = data;
-         /*    for (let index = 1; index < 20; index++) {
-                this.attendanceInfo.attendance.push({
-                    'id': index,
-                    'Noid': 'student' + index,
-                    'name': '康师傅' + index
-                });
-            } */
-            // 显示变量放在subscribe当中,防止html找不到成员变量
-            this.showBoolean = true;
-            this.loading = false;
+            if (this.type === 'attendance') {
+                this.tableData = this.attendanceInfo.attendance;
+            } else if (this.type === 'absence') {
+                this.tableData = this.attendanceInfo.absence;
+            } else if (this.type === 'late') {
+                this.tableData = this.attendanceInfo.late;
+            } else if (this.type === 'leaveearly') {
+                this.tableData = this.attendanceInfo.leaveearly;
+            }
+            this.tableLoading = false;
         });
     }
 }

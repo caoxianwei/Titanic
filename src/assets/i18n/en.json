@@ -293,7 +293,13 @@
     "stage-check":"Stage Check",
     "guatuation-management":"Guatuation Management",
     "test-rule":"Test Rule",
+    "test-rule-small":"Adjustment of the evaluation rules at various stages",
     "study-mode":"Study Mode",
     "weight-rate":"Weight Rate",
-    "report-rule":"Report Rule"
+    "report-rule":"Report Rule",
+    "all":"All",
+    "attendance":"Attendance",
+    "absence":"Absence",
+    "late":"Late",
+    "leaveearly":"Leave Early"
 }

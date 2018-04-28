@@ -44,7 +44,7 @@ export class EditTestRuleComponent implements OnInit {
         this.service.updateStageTestRule(this.obj.id, this.choice_count, this.choice_rate, this.judge_count, this.judge_rate, this.completion_count, this.completion_rate, this.answer_count, this.answer_rate, this.project_rate).subscribe(() => {
             const result = {};
             result['finish'] = true;
-            this.subject.next(result); // 通知主页面,已完成测试
+            this.subject.next(result);
             this.subject.destroy();
         });
     }

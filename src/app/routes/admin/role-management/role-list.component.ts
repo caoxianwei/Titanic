@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NzModalService } from 'ng-zorro-antd';
+import { NzModalService, NzMessageService } from 'ng-zorro-antd';
 import { AdminService } from '../admin.service';
 import { Logger } from 'angular2-logger/core';
 import { CreateOrEditRoleComponent } from './create-or-edit-role.component';
@@ -10,6 +10,7 @@ import { I18NService } from '@core/i18n/i18n.service';
 export class RoleListComponent implements OnInit {
     constructor(
         private modal: NzModalService,
+        private msg: NzMessageService,
         private service: AdminService,
         private log: Logger,
         private i18: I18NService) {
@@ -76,6 +77,7 @@ export class RoleListComponent implements OnInit {
         this.tableLoading = true;
         this.service.deleteRole(id).subscribe((data: any) => {
             this.getTableData();
+            this.msg.success('删除成功！');
         });
     }
 }
