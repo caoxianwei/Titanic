@@ -1,0 +1,123 @@
+<div class="content__title">
+    <h1>
+        {{ 'report-management' | translate }}
+        <small>{{ 'report-management-small' | translate }}</small>
+    </h1>
+</div>
+<div nz-row nzGutter="16">
+    <div nz-col nzXs="9" nzSm="9" nzMd="9" class="mb-md">
+        <nz-radio-group [(ngModel)]="type" [nzSize]="'large'" (ngModelChange)="typeChange()">
+            <label nz-radio [nzValue]="1">
+                <span>
+                    入学报告
+                </span>
+            </label>
+            <label nz-radio [nzValue]="2">
+                <span>
+                    学中报告
+                </span>
+            </label>
+            <label nz-radio [nzValue]="3">
+                <span>
+                    结业报告
+                </span>
+            </label>
+        </nz-radio-group>
+    </div>
+    <div nz-col nzXs="3" nzSm="3" nzMd="3" class="mb-md" style="float: right;">
+        <button nz-button [nzType]="'primary'" style="width:100%;" (click)="createOrEdit()">
+            <i class="anticon anticon-plus"></i>
+            <span>{{ 'create' | translate }}</span>
+        </button>
+    </div>
+</div>
+<div nz-row>
+    <div nz-col [nzMd]="24">
+        <nz-card>
+            <nz-table #nzTable [nzAjaxData]="tableData" [nzShowSizeChanger]="true" [nzLoading]="tableLoading" [nzTotal]="tableTotal"
+                [(nzPageIndex)]="tablePageIndex" (nzPageIndexChange)="getTableData()" [(nzPageSize)]="tablePageSize" (nzPageSizeChange)="getTableData()"
+                [nzShowTotal]="true">
+                <thead nz-thead *ngIf="type==1">
+                    <tr>
+                        <th nz-th>
+                            <span>操作</span>
+                        </th>
+                        <th nz-th width="17%">
+                            <span>专业名称</span>
+                        </th>
+                        <th nz-th width="17%">
+                            <span>性格类别</span>
+                        </th>
+                        <th nz-th width="17%">
+                            <span>专业能力</span>
+                        </th>
+                        <th nz-th width="17%">
+                            <span>思维能力</span>
+                        </th>
+                        <th nz-th>
+                            <span>描述</span>
+                        </th>
+                    </tr>
+                </thead>
+                <thead nz-thead *ngIf="type==2">
+                    <tr>
+                        <th nz-th>
+                            <span>操作</span>
+                        </th>
+                        <th nz-th>
+                            <span>类型名称</span>
+                        </th>
+                        <th nz-th>
+                            <span>最大值</span>
+                        </th>
+                        <th nz-th>
+                            <span>最小值</span>
+                        </th>
+                        <th nz-th>
+                            <span>描述</span>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody nz-tbody *ngIf="type==1">
+                    <tr nz-tbody-tr *ngFor="let obj of nzTable.data">
+                        <td nz-td>
+                            <a (click)="createOrEdit(obj)">
+                                <i class="anticon anticon-edit"></i>
+                            </a>
+                            <span nz-table-divider></span>
+                            <nz-popconfirm [nzTitle]="confirmText" (nzOnConfirm)="delete(obj.id)">
+                                <a nz-popconfirm>
+                                    <i class="anticon anticon-delete"></i>
+                                </a>
+                            </nz-popconfirm>
+                        </td>
+                        <td nz-td>{{obj.majorName}}</td>
+                        <td nz-td>{{obj.characterName}}</td>
+                        <td nz-td>{{obj.majorlabelName}}</td>
+                        <td nz-td>{{obj.branchName}}</td>
+                        <td nz-td>{{obj.intro}}</td>
+                    </tr>
+                </tbody>
+                <tbody nz-tbody *ngIf="type==2">
+                    <tr nz-tbody-tr *ngFor="let obj of nzTable.data">
+                        <td nz-td>
+                            <a (click)="createOrEdit(obj)">
+                                <i class="anticon anticon-edit"></i>
+                            </a>
+                            <span nz-table-divider></span>
+                            <nz-popconfirm [nzTitle]="confirmText" (nzOnConfirm)="delete(obj.id)">
+                                <a nz-popconfirm>
+                                    <i class="anticon anticon-delete"></i>
+                                </a>
+                            </nz-popconfirm>
+                        </td>
+                        <td nz-td>{{obj.typeName}}</td>
+                        <td nz-td>{{obj.maxvalue}}</td>
+                        <td nz-td>{{obj.minvalue}}</td>
+                        <td nz-td>{{obj.intro}}</td>
+                    </tr>
+                </tbody>
+            </nz-table>
+        </nz-card>
+    </div>
+</div>

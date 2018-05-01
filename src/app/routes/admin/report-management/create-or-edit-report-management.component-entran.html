@@ -1,0 +1,92 @@
+<div class="modal-header">
+    <div class="modal-title">
+        <span *ngIf="obj">{{ 'edit' | translate }}</span>
+        <span *ngIf="!obj">{{ 'create' | translate }}</span>
+    </div>
+</div>
+<div nz-row [nzGutter]="16">
+    <div nz-col [nzMd]="24">
+        <form nz-form #form="ngForm" *ngIf="!obj" (ngSubmit)="save()">
+            <div nz-form-item nz-row>
+                <div nz-form-label>
+                    <label for="major_id">专业名称</label>
+                </div>
+                <div nz-form-control>
+                    <nz-select [(ngModel)]="major_id" name="major_id" [nzPlaceHolder]="''" required>
+                        <nz-option *ngFor="let obj of prepareData.major" [nzLabel]="obj.name" [nzValue]="obj.id">
+                        </nz-option>
+                    </nz-select>
+                </div>
+            </div>
+            <div nz-form-item nz-row>
+                <div nz-form-label>
+                    <label for="characterlabel_id">性格类别</label>
+                </div>
+                <div nz-form-control>
+                    <nz-select [(ngModel)]="characterlabel_id" name="characterlabel_id" [nzPlaceHolder]="''" required>
+                        <nz-option *ngFor="let obj of prepareData.characterlabel" [nzLabel]="obj.name" [nzValue]="obj.id">
+                        </nz-option>
+                    </nz-select>
+                </div>
+            </div>
+            <div nz-form-item nz-row>
+                <div nz-form-label>
+                    <label for="majorlabel_id">专业能力</label>
+                </div>
+                <div nz-form-control>
+                    <nz-select [(ngModel)]="majorlabel_id" name="majorlabel_id" [nzPlaceHolder]="''" required>
+                        <nz-option *ngFor="let obj of prepareData.majorlabel" [nzLabel]="obj.name" [nzValue]="obj.id">
+                        </nz-option>
+                    </nz-select>
+                </div>
+            </div>
+            <div nz-form-item nz-row>
+                <div nz-form-label>
+                    <label for="branchlabel_id">思维能力</label>
+                </div>
+                <div nz-form-control>
+                    <nz-select [(ngModel)]="branchlabel_id" name="branchlabel_id" [nzPlaceHolder]="''" required>
+                        <nz-option *ngFor="let obj of prepareData.branchlabel" [nzLabel]="obj.name" [nzValue]="obj.id">
+                        </nz-option>
+                    </nz-select>
+                </div>
+            </div>
+            <div nz-form-item nz-row>
+                <div nz-form-label>
+                    <label for="content">描述</label>
+                </div>
+                <div nz-form-control>
+                    <nz-input [(ngModel)]="content" [nzId]="'content'" nzType="textarea" nzAutosize name="content" required>
+                    </nz-input>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button nz-button [nzType]="'default'" [nzSize]="'large'" type="button" (click)="cancel()">
+                    {{ 'cancel' | translate }}
+                </button>
+                <button nz-button [nzType]="'primary'" [nzSize]="'large'" type="submit" [disabled]="form.invalid || !form.dirty">
+                    {{ 'ok' | translate }}
+                </button>
+            </div>
+        </form>
+        <form nz-form #form="ngForm" *ngIf="obj" (ngSubmit)="save()">
+            <div nz-form-item nz-row>
+                <div nz-form-label>
+                    <label for="content">描述</label>
+                </div>
+                <div nz-form-control>
+                    <nz-input [(ngModel)]="content" [nzId]="'content'" nzType="textarea" nzAutosize name="content" required>
+                    </nz-input>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button nz-button [nzType]="'default'" [nzSize]="'large'" type="button" (click)="cancel()">
+                    {{ 'cancel' | translate }}
+                </button>
+                <button nz-button [nzType]="'primary'" [nzSize]="'large'" type="submit" [disabled]="form.invalid || !form.dirty">
+                    {{ 'ok' | translate }}
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

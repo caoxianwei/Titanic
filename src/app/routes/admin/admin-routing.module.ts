@@ -8,11 +8,12 @@ import { LogIndexComponent } from './log/log-index.component';
 import { StageRuleIndexComponent } from './stage-rule/stage-rule-index.component';
 import { TestRuleIndexComponent } from './stage-rule/test-rule/test-rule-index.component';
 import { FeedbackIndexComponent } from './feedback/feedback-index.component';
-
+import { ReportManagementComponent } from './report-management/report-management.component';
 
 const routes: Routes = [
   { path: 'user-list', component: UserListComponent },
   { path: 'feedback-index', component: FeedbackIndexComponent },
+  { path: 'report-index', component: ReportManagementComponent },
   { path: 'role-list', component: RoleListComponent },
   { path: 'log-index', component: LogIndexComponent },
   { path: 'test-rule-index', component: TestRuleIndexComponent },

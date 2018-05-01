@@ -225,7 +225,7 @@
                     "icon": "icon-bulb"
                 },{
                     "text": "报告管理",
-                    "link": "/a/b",
+                    "link": "/management/report-index",
                     "i18n": "report-management",
                     "reuse": false,
                     "acl": 32,

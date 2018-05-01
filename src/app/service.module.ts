@@ -6,6 +6,7 @@ import { NoticeManagementService } from './routes/class-bussiness/notice-managem
 import { NoticeListService } from './routes/student-center/notice-list/notice-list.service';
 import { StageDebateService } from './routes/common-function/stage-debate/stage-debate.service';
 import { AdminService } from './routes/admin/admin.service';
+import { StudentCenterService } from './routes/student-center/student-center.service';
 import { CommonFunctionService } from './routes/common-function/common-function.service';
 
 
@@ -21,7 +22,8 @@ const services = [
     NoticeListService,
     StageDebateService,
     CommonFunctionService,
-    AdminService
+    AdminService,
+    StudentCenterService
 ];
 
 @NgModule({

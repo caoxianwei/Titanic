@@ -225,4 +225,44 @@ export class AdminService {
     getFeedbackDetail(id) {
         return this.httpClient.get(this.baseURL + 'admin/feedback/' + id);
     }
+    /**
+     * 获取报告列表
+     * @param type 入学报告为1,阶段报告为2,结业报告为3
+     * @param page 页码
+     * @param limit 单页条数
+     */
+    getReportList(type, page?, limit?) {
+        if (page === undefined) {
+            page = '';
+        }
+        if (limit === undefined) {
+            limit = '';
+        }
+        if (type === 1) {
+            return this.httpClient.get(this.baseURL + 'admin/report/entrance/index?page=' + page + '&limit=' + limit + '');
+        } else if (type === 2) {
+            return this.httpClient.get(this.baseURL + 'admin/report/stage/index?page=' + page + '&limit=' + limit + '');
+        }
+    }
+    /**
+     * 获取报告的前置条件
+     * @param type 入学报告为1,阶段报告为2,结业报告为3
+     */
+    getReportPrepare(type) {
+        if (type === 1) {
+            return this.httpClient.get(this.baseURL + 'admin/report/entrance/where');
+        } else if (type === 2) {
+            return this.httpClient.get(this.baseURL + 'admin/report/stage/where');
+        }
+    }
+    /**
+     * 编辑入学报告内容
+     * @param id id
+     * @param content 描述
+     */
+    updateEntranceReport(id, content) {
+        const params = new HttpParams()
+            .set('content', content);
+        return this.httpClient.put(this.baseURL + 'admin/report/entrance/edit/' + id, params);
+    }
 }

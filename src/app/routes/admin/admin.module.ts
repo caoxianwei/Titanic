@@ -14,9 +14,11 @@ import { FeedbackIndexComponent } from './feedback/feedback-index.component';
 import { CheckFeedbackComponent } from './feedback/check-feedback.component';
 import { TestRuleIndexComponent } from './stage-rule/test-rule/test-rule-index.component';
 import { EditTestRuleComponent } from './stage-rule/test-rule/edit-test-rule.component';
+import { ReportManagementComponent } from './report-management/report-management.component';
+import { CreateOrEditReportManagementEntranComponent } from './report-management/create-or-edit-report-management-entran.component';
 
 import { AdminRoutingModule } from './admin-routing.module';
-const COMPONENTS_NOROUNT = [AddUserComponent, CreateOrEditRoleComponent, EditStageRuleComponent, CheckFeedbackComponent, EditTestRuleComponent];
+const COMPONENTS_NOROUNT = [AddUserComponent, CreateOrEditRoleComponent, EditStageRuleComponent, CheckFeedbackComponent, EditTestRuleComponent, CreateOrEditReportManagementEntranComponent];
 
 @NgModule({
     imports: [
@@ -31,6 +33,7 @@ const COMPONENTS_NOROUNT = [AddUserComponent, CreateOrEditRoleComponent, EditSta
         TestRuleIndexComponent,
         StageRuleIndexComponent,
         FeedbackIndexComponent,
+        ReportManagementComponent,
         ...COMPONENTS_NOROUNT
     ],
     entryComponents: COMPONENTS_NOROUNT
